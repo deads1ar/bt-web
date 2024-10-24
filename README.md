@@ -1,3 +1,7 @@
 # bt-web 
-bài tập lớn môn lập trình web
-trang web bán hàng
+- Giao diện trang web bán giày.
+- Thành viên:
++ Trần Hoàng Linh
++ Hồ Bảo Huy
++ Nguyễn Minh Sang
++ Ngô Đăng Quang
