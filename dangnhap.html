@@ -11,8 +11,8 @@
         <!-- Biểu mẫu Đăng nhập -->
         <form id="login-form" class="form" onsubmit="xuLyDangNhap(event)">
             <h2>Đăng nhập</h2>
-            <input type="text" id="login-username" name="username" placeholder="Tên đăng nhập" required>
-            <input type="password" name="password" placeholder="Mật khẩu" required>
+            <input type="text" id="login-username" name="username" placeholder="Tên đăng nhập">
+            <input type="password" name="password" placeholder="Mật khẩu">
             <button type="submit">Đăng nhập</button>
             <p>Bạn chưa có tài khoản? <a href="#" onclick="hienThiDangKy()">Đăng ký tại đây</a></p>
         </form>
@@ -20,19 +20,19 @@
         <!-- Biểu mẫu Đăng ký -->
         <form id="register-form" class="form" onsubmit="xuLyDangKy(event)">
             <h2>Đăng ký</h2>
-            <input type="text" id="register-username" name="username" placeholder="Tên đăng nhập" required>
-            <input type="password" name="password" placeholder="Mật khẩu" required>
-            <input type="password" name="confirm_password" placeholder="Nhập lại mật khẩu" required>
-            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" id="register-username" name="username" placeholder="Tên đăng nhập">
+            <input type="password" name="password" placeholder="Mật khẩu">
+            <input type="password" name="confirm_password" placeholder="Nhập lại mật khẩu">
+            <input type="email" name="email" placeholder="Email">
             
             <!-- Lựa chọn Giới tính -->
             <label for="gender">Giới tính:</label>
             <div class="gender-selection">
-                <label><input type="radio" name="gender" value="Nam" required> Nam</label>
-                <label><input type="radio" name="gender" value="Nữ" required> Nữ</label>
+                <label><input type="radio" name="gender" value="Nam"> Nam</label>
+                <label><input type="radio" name="gender" value="Nữ"> Nữ</label>
             </div>
 
-            <input type="text" name="address" placeholder="Địa chỉ" required>
+            <input type="text" name="address" placeholder="Địa chỉ">
             <button type="submit">Đăng ký</button>
             <p>Bạn đã có tài khoản? <a href="#" onclick="hienThiDangNhap()">Đăng nhập tại đây</a></p>
         </form>
@@ -60,7 +60,7 @@
             event.preventDefault();
             const tenDangNhap = document.getElementById("login-username").value;
             localStorage.setItem("username", tenDangNhap); // Lưu tên đăng nhập vào localStorage
-            window.location.href = "niked.html"; // Chuyển đến trang chủ
+            window.location.href = "index-Logged-in.html"; // Chuyển đến trang chủ
         }
 
         // Xử lý khi gửi biểu mẫu đăng ký
@@ -68,7 +68,7 @@
             event.preventDefault();
             const tenDangNhap = document.getElementById("register-username").value;
             localStorage.setItem("username", tenDangNhap); // Lưu tên đăng nhập vào localStorage
-            window.location.href = "niked.html"; // Chuyển đến trang chủ
+            window.location.href = "index-Logged-in.html"; // Chuyển đến trang chủ
         }
     </script>
 </body>
