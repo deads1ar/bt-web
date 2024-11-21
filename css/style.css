@@ -3766,3 +3766,85 @@ ol {
 	}
 }
 
+/* Ẩn bảng mặc định */
+.dropdown-menu {
+	pointer-events: auto; /* Kích hoạt sự kiện trên chữ */
+    display: none;
+    position: absolute;
+    top: 205%;
+    right: -65px; /* Căn phải */
+    left: auto; /* Hủy bỏ căn trái */
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 18px; /* Kích thước chữ cho <a> */
+    width: 250px; /* Đặt chiều rộng của dropdown */
+    min-height: 150px; /* Đặt chiều cao tối thiểu */
+    font-family: var(--font-theme);
+}
+
+/* Mở dropdown khi hover hoặc focus vào phần tử chứa nó */
+.dropdown:focus-within .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a:hover {
+    text-decoration: underline;
+}
+
+/* Đảm bảo các nút chiếm toàn bộ diện tích */
+.action-button-link {
+    display: block; /* Nút chiếm toàn bộ diện tích */
+    background-color: white; /* Nền trắng */
+    border: 1px solid transparent; /* Bỏ viền mặc định */
+    padding: 10px 20px;; /* Căn giữa nội dung theo chiều dọc */
+    width: 100%; /* Chiều ngang đầy đủ */
+    max-width: 300px; /* Giới hạn chiều rộng tối đa */
+    min-width: 150px; /* Giới hạn chiều rộng tối thiểu */
+    margin: 5px auto; /* Căn giữa và tạo khoảng cách */
+    border-radius: 5px; /* Bo góc nút */
+    cursor: pointer; /* Con trỏ tay */
+    text-align: center; /* Căn giữa nội dung */
+    text-decoration: none; /* Bỏ gạch chân */
+    color: #232323; /* Màu chữ */
+    font-size: 16px; /* Kích thước chữ */
+    transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease; /* Hiệu ứng mượt */
+}
+
+/* Khi rê chuột vào nút */
+.action-button-link:hover {
+    background-color: red; /* Đổi màu nền */
+    border: 1px solid red; /* Hiện viền */
+    color: white; /*Đổi màu chữ*/
+    text-decoration: none; /* Bỏ gạch chân */
+}
+
+/* Đảm bảo liên kết trong nút hoạt động */
+.action-button-link a{
+    display: inline-block; /* Liên kết chiếm toàn bộ diện tích */
+    width: 100%; /* Chiều ngang đầy đủ */
+    height: 100%; /* Chiều cao đầy đủ */
+    color: inherit; /* Kế thừa màu chữ từ nút */
+    text-decoration: none; /* Bỏ gạch chân */
+}
+
+/* Hiệu ứng khi rê chuột vào liên kết trong nút */
+.action-button-link a :hover {
+    color: inherit; /* Kế thừa màu chữ */
+    text-decoration: none; /* Bỏ gạch chân */
+}
+
+
+/* Đáp ứng màn hình nhỏ */
+@media (max-width: 600px) {
+    .action-button-link {
+        font-size: 14px; /* Giảm kích thước chữ */
+        padding: 8px 0; /* Điều chỉnh khoảng cách trên dưới */
+        width: 100%; /* Chiều ngang đầy đủ */
+        text-decoration: none; /* Bỏ gạch chân */
+    }
+}
+
