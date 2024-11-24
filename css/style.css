@@ -553,12 +553,6 @@ ol {
 	border-radius: 50%;
 }
 
-.header__right__widget img{
-	margin-bottom: 8px;
-}
-
-
-
 .offcanvas-menu-wrapper {
 	display: none;
 }
@@ -933,7 +927,6 @@ ol {
 .footer {
 	padding-top: 55px;
 }
- 
 
 .footer__about {
 	margin-bottom: 30px;
@@ -1296,7 +1289,6 @@ ol {
 	-webkit-transition: all 0.4s ease 0.1s;
 	-o-transition: all 0.4s ease 0.1s;
 	transition: all 0.4s ease 0.1s;
-	margin-right: 0%;
 }
 
 .product__hover li:nth-child(2) {
@@ -1312,7 +1304,7 @@ ol {
 }
 
 .product__hover li:last-child {
-	margin-right: 0px;
+	margin-right: 0;
 }
 
 .product__hover li:hover a {
@@ -1526,7 +1518,6 @@ ol {
 
 .filter-range-wrap .range-slider .price-input {
 	position: relative;
-	
 }
 
 .filter-range-wrap .range-slider .price-input p {
@@ -1539,7 +1530,7 @@ ol {
 
 .filter-range-wrap .range-slider .price-input:after {
 	position: absolute;
-	left: 81px;
+	left: 52.2%;
 	top: 12px;
 	height: 1px;
 	width: 5px;
@@ -1550,7 +1541,7 @@ ol {
 .filter-range-wrap .range-slider .price-input input {
 	font-size: 16px;
 	color: #0d0d0d;
-	max-width: 32%;
+	max-width: 35%;
 	border: none;
 }
 
@@ -1879,6 +1870,7 @@ ol {
 	text-transform: uppercase;
 	padding: 14px 30px 15px;
 	border-radius: 50px;
+	float: left;
 	margin-right: 10px;
 	margin-bottom: 10px;
 }
@@ -1933,6 +1925,7 @@ ol {
 	font-weight: 600;
 	color: #111111;
 	width: 150px;
+	float: left;
 }
 
 .product__details__widget ul li .stock__checkbox {
@@ -3291,7 +3284,7 @@ ol {
 		max-width: 27%;
 	}
 	.filter-range-wrap .range-slider .price-input {
-		margin-bottom: 20px;
+		margin-bottom: 50px;
 	}
 	.product__details__pic {
 		margin-bottom: 50px;
@@ -3846,4 +3839,5 @@ ol {
         text-decoration: none; /* Bỏ gạch chân */
     }
 }
+
 
