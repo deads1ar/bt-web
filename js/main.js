@@ -9,23 +9,23 @@ Created: Colorib
 
 'use strict';
 
-(function ($) {
+(function (đ) {
 
     /*------------------
         Preloader
     --------------------*/
-    $(window).on('load', function () {
-        $(".loader").fadeOut();
-        $("#preloder").delay(200).fadeOut("slow");
+    đ(window).on('load', function () {
+        đ(".loader").fadeOut();
+        đ("#preloder").delay(200).fadeOut("slow");
 
         /*------------------
             Product filter
         --------------------*/
-        $('.filter__controls li').on('click', function () {
-            $('.filter__controls li').removeClass('active');
-            $(this).addClass('active');
+        đ('.filter__controls li').on('click', function () {
+            đ('.filter__controls li').removeClass('active');
+            đ(this).addClass('active');
         });
-        if ($('.property__gallery').length > 0) {
+        if (đ('.property__gallery').length > 0) {
             var containerEl = document.querySelector('.property__gallery');
             var mixer = mixitup(containerEl);
         }
@@ -34,37 +34,37 @@ Created: Colorib
     /*------------------
         Background Set
     --------------------*/
-    $('.set-bg').each(function () {
-        var bg = $(this).data('setbg');
-        $(this).css('background-image', 'url(' + bg + ')');
+    đ('.set-bg').each(function () {
+        var bg = đ(this).data('setbg');
+        đ(this).css('background-image', 'url(' + bg + ')');
     });
 
     //Search Switch
-    $('.search-switch').on('click', function () {
-        $('.search-model').fadeIn(400);
+    đ('.search-switch').on('click', function () {
+        đ('.search-model').fadeIn(400);
     });
 
-    $('.search-close-switch').on('click', function () {
-        $('.search-model').fadeOut(400, function () {
-            $('#search-input').val('');
+    đ('.search-close-switch').on('click', function () {
+        đ('.search-model').fadeOut(400, function () {
+            đ('#search-input').val('');
         });
     });
 
     //Canvas Menu
-    $(".canvas__open").on('click', function () {
-        $(".offcanvas-menu-wrapper").addClass("active");
-        $(".offcanvas-menu-overlay").addClass("active");
+    đ(".canvas__open").on('click', function () {
+        đ(".offcanvas-menu-wrapper").addClass("active");
+        đ(".offcanvas-menu-overlay").addClass("active");
     });
 
-    $(".offcanvas-menu-overlay, .offcanvas__close").on('click', function () {
-        $(".offcanvas-menu-wrapper").removeClass("active");
-        $(".offcanvas-menu-overlay").removeClass("active");
+    đ(".offcanvas-menu-overlay, .offcanvas__close").on('click', function () {
+        đ(".offcanvas-menu-wrapper").removeClass("active");
+        đ(".offcanvas-menu-overlay").removeClass("active");
     });
 
     /*------------------
 		Navigation
 	--------------------*/
-    $(".header__menu").slicknav({
+    đ(".header__menu").slicknav({
         prependTo: '#mobile-menu-wrap',
         allowParentLinks: true
     });
@@ -72,18 +72,18 @@ Created: Colorib
     /*------------------
         Accordin Active
     --------------------*/
-    $('.collapse').on('shown.bs.collapse', function () {
-        $(this).prev().addClass('active');
+    đ('.collapse').on('shown.bs.collapse', function () {
+        đ(this).prev().addClass('active');
     });
 
-    $('.collapse').on('hidden.bs.collapse', function () {
-        $(this).prev().removeClass('active');
+    đ('.collapse').on('hidden.bs.collapse', function () {
+        đ(this).prev().removeClass('active');
     });
 
     /*--------------------------
         Banner Slider
     ----------------------------*/
-    $(".banner__slider").owlCarousel({
+    đ(".banner__slider").owlCarousel({
         loop: true,
         margin: 0,
         items: 1,
@@ -96,7 +96,7 @@ Created: Colorib
     /*--------------------------
         Product Details Slider
     ----------------------------*/
-    $(".product__details__pic__slider").owlCarousel({
+    đ(".product__details__pic__slider").owlCarousel({
         loop: false,
         margin: 0,
         items: 1,
@@ -127,12 +127,12 @@ Created: Colorib
     /*------------------
 		Magnific
     --------------------*/
-    $('.image-popup').magnificPopup({
+    đ('.image-popup').magnificPopup({
         type: 'image'
     });
 
 
-    $(".nice-scroll").niceScroll({
+    đ(".nice-scroll").niceScroll({
         cursorborder:"",
         cursorcolor:"#dddddd",
         boxzoom:false,
@@ -166,16 +166,16 @@ Created: Colorib
 
     /* var timerdate = "2020/12/30" */
 
-	$("#countdown-time").countdown(timerdate, function(event) {
-        $(this).html(event.strftime("<div class='countdown__item'><span>%D</span> <p>Day</p> </div>" + "<div class='countdown__item'><span>%H</span> <p>Hour</p> </div>" + "<div class='countdown__item'><span>%M</span> <p>Min</p> </div>" + "<div class='countdown__item'><span>%S</span> <p>Sec</p> </div>"));
+	đ("#countdown-time").countdown(timerdate, function(event) {
+        đ(this).html(event.strftime("<div class='countdown__item'><span>%D</span> <p>Day</p> </div>" + "<div class='countdown__item'><span>%H</span> <p>Hour</p> </div>" + "<div class='countdown__item'><span>%M</span> <p>Min</p> </div>" + "<div class='countdown__item'><span>%S</span> <p>Sec</p> </div>"));
     });
 
     /*-------------------
 		Range Slider
 	--------------------- */
-	var rangeSlider = $(".price-range"),
-    minamount = $("#minamount"),
-    maxamount = $("#maxamount"),
+	var rangeSlider = đ(".price-range"),
+    minamount = đ("#minamount"),
+    maxamount = đ("#maxamount"),
     minPrice = rangeSlider.data('min'),
     maxPrice = rangeSlider.data('max');
     rangeSlider.slider({
@@ -184,34 +184,34 @@ Created: Colorib
     max: maxPrice,
     values: [minPrice, maxPrice],
     slide: function (event, ui) {
-        minamount.val('$' + ui.values[0]);
-        maxamount.val('$' + ui.values[1]);
+        minamount.val(ui.values[0] + 'đ');
+        maxamount.val(ui.values[1] + 'đ');
         }
     });
-    minamount.val('$' + rangeSlider.slider("values", 0));
-    maxamount.val('$' + rangeSlider.slider("values", 1));
+    minamount.val(rangeSlider.slider("values", 0) + 'đ');
+    maxamount.val(rangeSlider.slider("values", 1) + 'đ');
 
     /*------------------
 		Single Product
 	--------------------*/
-	$('.product__thumb .pt').on('click', function(){
-		var imgurl = $(this).data('imgbigurl');
-		var bigImg = $('.product__big__img').attr('src');
+	đ('.product__thumb .pt').on('click', function(){
+		var imgurl = đ(this).data('imgbigurl');
+		var bigImg = đ('.product__big__img').attr('src');
 		if(imgurl != bigImg) {
-			$('.product__big__img').attr({src: imgurl});
+			đ('.product__big__img').attr({src: imgurl});
 		}
     });
     
     /*-------------------
 		Quantity change
 	--------------------- */
-    var proQty = $('.pro-qty');
+    var proQty = đ('.pro-qty');
 	proQty.prepend('<span class="dec qtybtn">-</span>');
 	proQty.append('<span class="inc qtybtn">+</span>');
 	proQty.on('click', '.qtybtn', function () {
-		var $button = $(this);
-		var oldValue = $button.parent().find('input').val();
-		if ($button.hasClass('inc')) {
+		var đbutton = đ(this);
+		var oldValue = đbutton.parent().find('input').val();
+		if (đbutton.hasClass('inc')) {
 			var newVal = parseFloat(oldValue) + 1;
 		} else {
 			// Don't allow decrementing below zero
@@ -221,15 +221,15 @@ Created: Colorib
 				newVal = 0;
 			}
 		}
-		$button.parent().find('input').val(newVal);
+		đbutton.parent().find('input').val(newVal);
     });
     
     /*-------------------
 		Radio Btn
 	--------------------- */
-    $(".size__btn label").on('click', function () {
-        $(".size__btn label").removeClass('active');
-        $(this).addClass('active');
+    đ(".size__btn label").on('click', function () {
+        đ(".size__btn label").removeClass('active');
+        đ(this).addClass('active');
     });
 
 })(jQuery);
