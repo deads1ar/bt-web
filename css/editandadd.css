@@ -6,8 +6,9 @@
     border: 1px solid #cccccc;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #d30c0c;
+    background-color: #add8e6; /* Màu xanh dương nhạt */
 }
+
 
 /* Style for the form labels */
 form label {
