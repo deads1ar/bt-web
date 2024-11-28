@@ -1,11 +1,8 @@
 /* General styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #f8f9fa; /* Màu nền nhẹ nhàng */
-    color: #333; /* Màu chữ */
+	height: 100%;
+	font-family: "Montserrat", sans-serif;
+	-webkit-font-smoothing: antialiased;
 }
 
 .checkout-container {
