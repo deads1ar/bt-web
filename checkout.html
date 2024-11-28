@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/test1.css" type="text/css">
+
 </head>
 
 <body>
@@ -37,20 +39,14 @@
         <div class="offcanvas__close">+</div>
         <ul class="offcanvas__widget">
             <li><span class="icon_search search-switch"></span></li>
-            <li><a href="#"><span class="icon_heart_alt"></span>
-                <div class="tip">2</div>
-            </a></li>
-            <li><a href="#"><span class="icon_bag_alt"></span>
-                <div class="tip">2</div>
-            </a></li>
         </ul>
         <div class="offcanvas__logo">
             <a href="./index.html"><img src="img/logo.png" alt=""></a>
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__auth">
-            <a href="#">Login</a>
-            <a href="#">Register</a>
+            <a href="#">Đăng Nhập</a>
+            <a href="#">Đăng Kí</a>
         </div>
     </div>
     <!-- Offcanvas Menu End -->
@@ -74,25 +70,40 @@
                             <li><a href="./shop-cart.html">Shop Cart</a></li>
                             <li><a href="./checkout.html">Checkout</a></li>
                             <li><a href="./contact.html">Contact</a></li>
-                    </nav>
+                        
+                        </ul>
+                    
                 </div>
                 <div class="col-lg-3">
                     <div class="header__right">
                         <div class="header__right__auth">
-                            <a href="#">Login</a>
-                            <a href="#">Register</a>
+                            <ul class="header__right__widget">
+                                <li class="search-container">
+                                    <form action="ketquatimkiem.html" method="GET">
+                                        <input type="text" class="search-input" placeholder="Nhập tên sản phẩm">
+                                        <button type="submit" class="search-button">
+                                            <a><span class="icon_search"></span> </a>
+                                        </button>
+                                    </form>
+                                </li>
+                                <li class="dropdown">
+                                    <div>
+                                        <a href="#" class="user-link"><img src="img/user-profile.png" width="45px"></img></a>
+                                        
+                                        <div class="dropdown-menu" >
+                                            <strong>Tài khoản: <span>Mãi Bên Em</span></strong>
+                                            <a class="action-button-link" style="text-decoration: none" href="nike.html">Đổi Mật Khẩu</a>
+                                            <a class="action-button-link" style="text-decoration: none" href="nike.html">Đăng Xuất</a>
+                                       </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            
                         </div>
-                        <ul class="header__right__widget">
-                            <li><span class="icon_search search-switch"></span></li>
-                            <li><a href="#"><span class="icon_heart_alt"></span>
-                                <div class="tip">2</div>
-                            </a></li>
-                            <li><a href="#"><span class="icon_bag_alt"></span>
-                                <div class="tip">2</div>
-                            </a></li>
-                        </ul>
                     </div>
+
                 </div>
+        
             </div>
             <div class="canvas__open">
                 <i class="fa fa-bars"></i>
@@ -101,6 +112,7 @@
     </header>
     <!-- Header Section End -->
 
+
     <!-- Breadcrumb Begin -->
     <div class="breadcrumb-option">
         <div class="container">
@@ -108,21 +120,137 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <a href="./index.html"><i class="fa fa-home"></i> Home</a>
-                        <span>Shopping cart</span>
+                        <span>Giỏ hàng</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Breadcrumb End -->
-
+    <!--123-->
+    
+    <div class="cart-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Sản Phẩm</th>
+                    <th>Thong tin Sản Phẩm</th>
+                    <th>Giá</th>
+                    <th>Size</th>
+                    <th>Số Lượng</th>
+                    <th>Tổng(Tạm tính )</th>
+                    <th>Chỉnh sửa đơn hàng</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="product__item__pic1 set-bg" data-setbg="img/shop/shop-5.jpg"></div>
+                    </td>
+                    <td>Giày Nike</td>
+                    <td>2,000,000 VNĐ</td>
+                    <td>
+                        <input type="number" value="36" min="36"  max="43" class="quantity-input">
+                    </td>
+                    <td>
+                        <input type="number" value="1" min="1" class="quantity-input">
+                    </td>
+                    <td>2,000,000 VNĐ</td>
+                    <td> 
+                        <button onclick="Xoa()" class=".notification">Xóa</button>
+                        <script>function Xoa(){alert("Đã xóa sản phẩm")}</script>
+                    </td>
+                </tr>
+                
+               
+                <tr>
+                    <td>
+                        <div class="product__item__pic1 set-bg" data-setbg="img/shop/shop-2.jpg"></div>
+                    </td>
+                    <td>Giày Nike</td>
+                    <td>2,000,000 VNĐ</td>
+                    <td>
+                        <input type="number" value="36" min="36"  max="43" class="quantity-input">
+                    </td>
+                    <td>
+                        <input type="number" value="1" min="1" class="quantity-input">
+                    </td>
+                    <td>2,000,000 VNĐ</td>
+                    <td> 
+                        <button onclick="Xoa()" class=".notification">Xóa</button>
+                        <script>function Xoa(){alert("Đã xóa sản phẩm")}</script>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="product__item__pic1 set-bg" data-setbg="img/shop/shop-7.jpg"></div>
+                    </td>
+                    <td>Giày Nike</td>
+                    <td>2,000,000 VNĐ</td>
+                    <td>
+                        <input type="number" value="36" min="36"  max="43" class="quantity-input">
+                    </td>
+                    <td>
+                        <input type="number" value="1" min="1" class="quantity-input">
+                    </td>
+                    <td>2,000,000 VNĐ</td>
+                    <td> 
+                        <button onclick="Xoa()" class=".notification">Xóa</button>
+                        <script>function Xoa(){alert("Đã xóa sản phẩm")}</script>
+                    </td>             
+                <tr>
+                    <td>
+                        <div class="product__item__pic1 set-bg" data-setbg="img/shop/shop-9.jpg"></div>
+                    </td>
+                    <td>Giày Nike</td>
+                    <td>2,000,000 VNĐ</td>
+                    <td>
+                        <input type="number" value="36" min="36"  max="43" class="quantity-input">
+                    </td>
+                    <td>
+                        <input type="number" value="1" min="1" class="quantity-input">
+                    </td>
+                    <td>2,000,000 VNĐ</td>
+                    <td> 
+                        <button onclick="Xoa()" class=".notification">Xóa</button>
+                        <script>function Xoa(){alert("Đã xóa sản phẩm")}</script>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="product__item__pic1 set-bg" data-setbg="img/shop/shop-7.jpg"></div>
+                    </td>
+                    <td>Giày Nike</td>
+                    <td>2,000,000 VNĐ</td>
+                    <td>
+                        <input type="number" value="36" min="36"  max="43" class="quantity-input">
+                    </td>
+                    <td>
+                        <input type="number" value="1" min="1" class="quantity-input">
+                    </td>
+                    <td>2,000,000 VNĐ</td>
+                    <td> 
+                        <button onclick="Xoa()" class=".notification">Xóa</button>
+                        <script>function Xoa(){alert("Đã xóa sản phẩm")}</script>
+                    </td>
+                </tr>
+               
+            </tbody>
+        </table>
+        <div id="notification" class="notification">Đã xóa sản phẩm</div>
+        <div class="cart-total">
+            <a href="nike.html">
+                <button id="return">Tiếp tục mua sắm</button>
+            </a>
+        </div>
+    <!--123-->
     <!-- Checkout Section Begin -->
     <section class="checkout spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h6 class="coupon__link"><span class="icon_tag_alt"></span> <a href="#">Have a coupon?</a> Click
-                    here to enter your code.</h6>
+                    <!--h6 class="coupon__link"><span class="icon_tag_alt"></span> <a href="#">Have a coupon?</a> Click
+                    here to enter your code.</h6>-->
                 </div>
             </div>
             <form action="#" class="checkout__form">
@@ -132,125 +260,157 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
-                                    <p>First Name <span>*</span></p>
-                                    <input type="text">
+                                    <p>Tên<span>*</span></p>
+                                    <input type="text" value=" Anh Sang Quan" >
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
-                                    <p>Last Name <span>*</span></p>
-                                    <input type="text">
+                                    <p>Họ <span>*</span></p>
+                                    <input type="text" value="Linh" >
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="checkout__form__input">
-                                    <p>Country <span>*</span></p>
-                                    <input type="text">
+                                    <p>Nước <span>*</span></p>
+                                    <input type="text" value="Việt Nam" >
                                 </div>
                                 <div class="checkout__form__input">
-                                    <p>Address <span>*</span></p>
-                                    <input type="text" placeholder="Street Address">
-                                    <input type="text" placeholder="Apartment. suite, unite ect ( optinal )">
+                                    <p>Địa chỉ <span>*</span></p>
+                                    <input type="text" value="224 Nguyễn Thị Minh Khai, Phường 6, Quận 3, TP. Hồ Chí Minh, Việt Nam." placeholder="Địa chỉ nhà " >
+                                    <p>Địa chỉ căn hộ/chung cư...(Nếu có)<span>*</span></p>
+                                    <input type="text" value="88 Đường Nguyễn Cơ Thạch, Quận 2, TP. Hồ Chí Minh." placeholder="Địa chỉ căn hộ/chung cư...(Nếu có)" >
                                 </div>
                                 <div class="checkout__form__input">
-                                    <p>Town/City <span>*</span></p>
-                                    <input type="text">
+                                    <p>Tỉnh/Thành phố <span>*</span></p>
+                                    <input type="text" value="TP. Hồ Chí Minh" >
                                 </div>
                                 <div class="checkout__form__input">
-                                    <p>Country/State <span>*</span></p>
-                                    <input type="text">
+                                    <p>Quận/Huyện <span>*</span></p>
+                                    <input type="text" value="Quận 3" >
                                 </div>
                                 <div class="checkout__form__input">
-                                    <p>Postcode/Zip <span>*</span></p>
-                                    <input type="text">
+                                    <p>Mã bưu chính<span>*</span></p>
+                                    <input type="text" value="10001" >
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
-                                    <p>Phone <span>*</span></p>
-                                    <input type="text">
+                                    <p>Số Điện Thoại  <span>*</span></p>
+                                    <input type="text" value="123-456-7890" >
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
                                     <p>Email <span>*</span></p>
-                                    <input type="text">
+                                    <input type="text" value="john.doe@example.com" >
                                 </div>
                             </div>
+                        
                             <div class="col-lg-12">
-                                <div class="checkout__form__checkbox">
-                                    <label for="acc">
-                                        Create an acount?
-                                        <input type="checkbox" id="acc">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <p>Create am acount by entering the information below. If you are a returing
-                                        customer login at the <br />top of the page</p>
-                                    </div>
-                                    <div class="checkout__form__input">
-                                        <p>Account Password <span>*</span></p>
-                                        <input type="text">
-                                    </div>
-                                    <div class="checkout__form__checkbox">
-                                        <label for="note">
-                                            Note about your order, e.g, special noe for delivery
-                                            <input type="checkbox" id="note">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </div>
-                                    <div class="checkout__form__input">
-                                        <p>Oder notes <span>*</span></p>
-                                        <input type="text"
-                                        placeholder="Note about your order, e.g, special noe for delivery">
+                                <div class="checkout__form__input">
+                                    <p>Ghi chú đặt hàng <span>*</span></p>
+                                    <input type="text"
+                                    placeholder="Lưu ý về đơn đặt hàng của bạn, ví dụ: thông báo đặc biệt khi giao hàng">
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="checkout__order">
-                                <h5>Your order</h5>
+                                <h5>Đơn của bạn </h5>
                                 <div class="checkout__order__product">
                                     <ul>
                                         <li>
                                             <span class="top__text">Product</span>
                                             <span class="top__text__right">Total</span>
                                         </li>
-                                        <li>01. Nike Air Force 1 '07 High <span>2.645.000 đ</span></li>
-                                        <li>02. Nike SFB Field 2 8”<br /> tote briefcase <span>2.566.000 đ</span></li>
-                                        <li>03. Jordan 2/3 <span>2.704.000 đ</span></li>
-                                        <li>04. Nike Pegasus Trail 5 <span>3.999.000 đ</span></li>
+                                            <li>01. Nike Air Max 270 <span>2.000.000VND</span></li>
+                                            <li>02. Nike Air Force 1 <span>2.000.000VND</span></li>
+                                            <li>03. Nike React Infinity Run <span>2.000.000VND</span></li>
+                                            <li>04. Nike ZoomX Vaporfly NEXT% <span>2.000.000VND</span></li>
                                     </ul>
                                 </div>
                                 <div class="checkout__order__total">
                                     <ul>
-                                        <li>Subtotal <span>11.914.000 đ</span></li>
-                                        <li>Total <span>11.914.000 đ</span></li>
+                                        <li>Tổng phụ<span>8.000.000VND</span></li>
+                                        <li>Tổng <span>8.000.000VND</span></li>
                                     </ul>
                                 </div>
                                 <div class="checkout__order__widget">
-                                    <label for="o-acc">
-                                        Create an acount?
-                                        <input type="checkbox" id="o-acc">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <p>Create am acount by entering the information below. If you are a returing customer
-                                    login at the top of the page.</p>
+                                    
                                     <label for="check-payment">
-                                        Cheque payment
+                                        Thanh toán khi nhận hàng 
                                         <input type="checkbox" id="check-payment">
                                         <span class="checkmark"></span>
                                     </label>
                                     <label for="paypal">
-                                        PayPal
+                                        Chuyển khoản
                                         <input type="checkbox" id="paypal">
                                         <span class="checkmark"></span>
                                     </label>
+                                    <label for="card">
+                                        Thanh toán bằng thẻ 
+                                        <input type="checkbox" id="card">
+                                        <span class="checkmark"></span>
+                                    </label>
+                        
+                                    <div class="card-info" id="card-info">
+                                        <div class="form-group">
+                                            <label for="card-name">Tên trên thẻ:</label>
+                                            <input type="text" id="card-name" placeholder="Nhập tên trên thẻ" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="card-number">Số thẻ:</label>
+                                            <input type="text" id="card-number" placeholder="Nhập số thẻ" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="card-expiry">Ngày hết hạn (MM/YY):</label>
+                                            <input type="text" id="card-expiry" placeholder="MM/YY" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="card-cvv">CVV:</label>
+                                            <input type="text" id="card-cvv" placeholder="Nhập CVV" required>
+                                        </div>
+                                    </div>
                                 </div>
-                                <button type="submit" class="site-btn">Place oder</button>
+                                <td> 
+                                    <button onclick="dathang()" class="site-btn">Đặt hàng</button>
+                                    <script>function dathang(){alert("Đã đặt hàng thành công")}</script>
+                                </td>
+                                <!---->
+                                <script>
+                                    // Hiển thị/Ẩn bảng thông tin thẻ khi checkbox được chọn/bỏ chọn
+                                    const cardCheckbox = document.getElementById('card');
+                                    const cardInfo = document.getElementById('card-info');
+                            
+                                    cardCheckbox.addEventListener('change', function () {
+                                        if (this.checked) {
+                                            cardInfo.style.display = 'block';
+                                        } else {
+                                            cardInfo.style.display = 'none';
+                                        }
+                                    });
+                            
+                                    
+                                </script>
                             </div>
                         </div>
                     </div>
                 </form>
+                <div class="order-history">
+                    <h3>Lịch sử mua hàng</h3>
+                    <div class="order-item">
+                        <p>Đơn hàng #12345 - Ngày 12/11/2024 - 400,000 VND</p>
+                        <button onclick="window.location.href='chitietdonhang.html';">Xem chi tiết</button>
+                    </div>
+                    </div>
+                    <div class="order-item">
+                        <p>Đơn hàng #12346 - Ngày 10/11/2024 - 300,000 VND</p>
+                        <button onclick="window.location.href='chitietdonhang.html';">Xem chi tiết</button>
+        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <!-- Checkout Section End -->
