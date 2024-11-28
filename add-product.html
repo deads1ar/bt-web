@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/editandadd.css"> 
+</head>
+<body>
+    <div class="container">
+        <h2>Thêm sản phẩm mới</h2>
+        <form onsubmit="redirectToAdmin(event)">
+            <label for="name">Tên sản phẩm:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="category">Loại sản phẩm:</label>
+            <select type="text" id="category" name="category" required>
+                <option>Nike</option>
+                <option>adidas</option>
+                <option>jordan</option>
+            </select>
+            
+            <label for="size">Kích thước:</label>
+            <select type="text" id="size" name="size" required>
+                <option>37</option>
+                <option>38</option>
+                <option>39</option>
+                <option>40</option>
+                <option>41</option>
+                <option>42</option>
+                <option>43</option>
+                <option>44</option>
+                <option>45</option>
+            </select>
+            
+            <label for="price">Giá sản phẩm:</label>
+            <input type="number" id="price" name="price" required>
+
+            <label for="product-quantity">Số lượng:</label>
+            <input type="number" id="product-quantity" required>
+
+            <label for="product-image">Hình ảnh :</label>
+            <input type="file" id="product-image" accept="image/*" required>
+            </br>
+            
+            <label for="description">Mô tả:</label>
+            <textarea id="description" name="description" rows="4"></textarea>
+            
+            
+            <button type="submit">Thêm sản phẩm</button>
+        </form>
+    </div>
+
+    <script>
+        function redirectToAdmin(event) {
+            event.preventDefault(); // Prevent form submission
+            // Perform any necessary actions here (e.g., save data)
+            window.location.href = 'adminlogin.html'; // Redirect to admin page
+        }
+    </script>
+</body>
+</html>
