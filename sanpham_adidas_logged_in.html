@@ -61,9 +61,9 @@
                     <nav class="header__menu">
                         <ul>
                             <li><a href="index_logged_in.html">Trang chủ</a></li>
-                            <li><a href="sanpham_logged_in.html">Nike</a></li>
-                            <li><a href="sanpham_logged_in.html">Adidas</a></li>
-                            <li><a href="sanpham_logged_in.html">Jordan</a></li>
+                            <li><a href="sanpham_nike_logged_in.html">Nike</a></li>
+                            <li class="active"><a href="sanpham_adidas_logged_in.html">Adidas</a></li>
+                            <li><a href="sanpham_jordan_logged_in.html">Jordan</a></li>
                             <li><a href="checkout.html">Giỏ Hàng</a></li>
                         </ul>
                     </nav>
@@ -82,13 +82,13 @@
                                 </li>
                                 <li class="dropdown">
                                     <div>
-                                        <a href="#" class="user-link"><img src="img/user-profile.png" width="45px"></img></a>
-                                        
+                                        <a href="#" class="user-link"><img src="img/user-profile.png" width="45px"></img></a>        
                                         <div class="dropdown-menu" >
-                                            <hr style="border: 1px dashed gray;">
-                                            <a class="action-button-link" style="text-decoration: none" href="dangnhap.html">Đăng Nhập</a>
-                                            <a class="action-button-link" style="text-decoration: none" href="nike.html">Đăng kí</a>
-                                       </div>
+                                            <strong>Tài khoản: <span>Mãi bên em</span></strong>
+                                            <a class="action-button-link" style="text-decoration: none" href="lichsudonhang.html">Lịch sử mua hàng</a>
+                                            <a class="action-button-link" style="text-decoration: none" href="dangnhap.html">Đổi mật khẩu</a>
+                                            <a class="action-button-link" style="text-decoration: none" href="index.html">Đăng Xuất</a>                                    
+                                        </div>
                                     </div>
                                 </li>
                                 
@@ -110,7 +110,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
-                        <a href="./index.html"><i class="fa fa-home"></i> Trang chủ</a>
+                        <a href="./index_logged_in.html"><i class="fa fa-home"></i> Trang chủ</a>
                         <span>Sản phẩm</span>
                     </div>
                 </div>
@@ -125,6 +125,15 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="shop__sidebar">
+                        <div class="sidebar__sizes">
+                            <div class="section-title">
+                                <li class="search-container" style="max-width: 2400px;">
+                                    <form action="ketquatimkiem_logged_in.html" method="GET">
+                                        <input type="text" class="search-input" placeholder="Nhập tên sản phẩm">
+                                    </form>
+                                </li>
+                            </div>
+                        </div>
                         <div class="sidebar__sizes">
                             <div class="section-title">
                                 <h4>TÌM THEO THƯƠNG HIỆU</h4>
@@ -163,99 +172,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="sidebar__sizes">
-                            <div class="section-title">
-                                <h4>TÌM THEO KÍCH CỠ</h4>
-                            </div>
-                            <div class="size__list">
-                                <label for="xxs">
-                                    37
-                                    <input type="checkbox" id="xxs">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label for="xs">
-                                    38
-                                    <input type="checkbox" id="xs">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label for="xss">
-                                    39
-                                    <input type="checkbox" id="xss">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label for="s">
-                                    40
-                                    <input type="checkbox" id="s">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label for="m">
-                                    41
-                                    <input type="checkbox" id="m">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label for="ml">
-                                    42
-                                    <input type="checkbox" id="ml">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label for="l">
-                                    43
-                                    <input type="checkbox" id="l">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="sidebar__color">
-                            <div class="section-title">
-                                <h4>TÌM THEO MÀU</h4>
-                            </div>
-                            <div class="size__list color__list">
-                                <label for="black">
-                                    Blacks
-                                    <input type="checkbox" id="black">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label for="whites">
-                                    Whites
-                                    <input type="checkbox" id="whites">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label for="reds">
-                                    Reds
-                                    <input type="checkbox" id="reds">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label for="greys">
-                                    Greys
-                                    <input type="checkbox" id="greys">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label for="blues">
-                                    Blues
-                                    <input type="checkbox" id="blues">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label for="beige">
-                                    Beige Tones
-                                    <input type="checkbox" id="beige">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label for="greens">
-                                    Greens
-                                    <input type="checkbox" id="greens">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label for="yellows">
-                                    Yellows
-                                    <input type="checkbox" id="yellows">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                        </div>
-                        <a   href="ketquatimkiem_logged_in.html">Filter</a>
+                        <a href="ketquatimkiem_logged_in.html">Tìm</a>
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-9">
+                    <h3 style="text-align:center; margin-bottom: 10px;">ADIDAS</h3>
                     <div class="row">
                         <div class="col-lg-4 col-md-6">
                             <div class="product__item">
