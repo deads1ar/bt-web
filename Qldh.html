@@ -23,8 +23,6 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="css/admin.css" type="text/css">
-
 
     <style>
         /* Table styling */
@@ -52,7 +50,6 @@
         }
     </style>
 
-
 </head>
 
 <body>
@@ -69,7 +66,6 @@
         </div>
     </div>
     <!-- Offcanvas Menu End -->
-
     <!-- Header Section Begin -->
     <header class="header">
         <div class="container-fluid">
@@ -105,314 +101,320 @@
                                     <div>
                                         <a href="#" class="user-link"><img src="img/user-profile.png"
                                                 width="45px"></img></a>
+
                                         <div class="dropdown-menu">
-                                            <hr style="border: 1px dashed gray;">
+                                            <strong>Tài khoản: <span>Mãi Bên Em</span></strong>
                                             <a class="action-button-link" style="text-decoration: none"
-                                                href="dangnhapad.html">Đăng Nhập</a>
+                                                href="admin.html">Đổi Mật Khẩu</a>
                                             <a class="action-button-link" style="text-decoration: none"
-                                                href="dangnhapad.html">Đăng kí</a>
+                                                href="addmin.html">Đăng Xuất</a>
                                         </div>
                                     </div>
                                 </li>
+
                             </ul>
                         </div>
                     </div>
                 </div>
+                <div class="canvas__open">
+                    <i class="fa fa-bars"></i>
+                </div>
             </div>
-            <div class="canvas__open">
-                <i class="fa fa-bars"></i>
-            </div>
-        </div>
     </header>
     <!-- Header Section End -->
-
     <!-- Main Dashboard Content Begin -->
     <main class="dashboard-content">
-        <div class="container mt-5">
-            <h2 class="text-center mb-4">Quản Lý Đơn Hàng</h2>
-            <!-- Bộ lọc -->
-            <div class="row mb-4">
-                <div class="col-md-4">
-                    <label for="filter-code">Tìm Mã Đơn :</label>
-                    <input type="text" id="filter-code" class="search-input" placeholder="Nhập Mã Đơn">
-                </div>
-                <div class="col-md-4">
-                    <label for="filter-customer">Tìm Khách Hàng :</label>
-                    <input type="text" id="filter-customer" class="search-input" placeholder="Nhập Tên Khách Hàng">
-                </div>
-                <div class="col-md-4">
-                    <label for="filter-phone">Tìm Số điện thoại :</label>
-                    <input type="text" id="filter-phone" class="search-input" placeholder="Nhập Số điện thoại">
-                </div>
-                <div class="col-md-4">
-                    <label for="filter-quantity">Tìm Số Lượng :</label>
-                    <input type="text" id="filter-quantity" class="search-input" placeholder="Nhập Số Lượng">
-                </div>
-                <div class="col-md-4">
-                    <label for="filter-time">Tìm thời gian đặt hàng:</label>
-                    <div class="mb-2">
-                        <label for="start-time" class="form-label">Từ ngày:</label>
-                        <input type="date" id="start-time" class="search-input">
-                    </div>
-                    <div>
-                        <label for="end-time" class="form-label">Đến ngày:</label>
-                        <input type="date" id="end-time" class="search-input">
+        <div class="container-fluid">
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <h2 class="text-center mb-4">Danh sách đơn hàng</h2>
+                    <div class="filter-section text-center mb-4">
+                        <form action="Qldh.html" method="GET">
+                            <label>Tìm số thứ tự :</label>
+                            <input type="text" class="search-input" placeholder="Nhập số thứ tự">
+                            <label>Tìm mã đơn hàng :</label>
+                            <input type="text" class="search-input" placeholder="Nhập mã đơn hàng">
+                            <label>Tìm tên khách hàng :</label>
+                            <input type="text" class="search-input" placeholder="Nhập tên khách hàng">
+                            <label>Tìm số điện thoại :</label>
+                            <input type="text" class="search-input" placeholder="Nhập số điện thoại">
+                        </form>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <label for="filter-address">Tìm địa chỉ :</label>
-                    <input type="text" id="filter-address" class="search-input" placeholder="Nhập địa chỉ">
+            </div>
+            <div class="container-fluid">
+                <div class="row mt-0">
+                    <div class="col-lg-9">
+                        <div class="filter-section text-center mb-4">
+                            <form action="Qldh.html" method="GET">
+                                <label>Tìm địa chỉ </label>
+                                <input type="text" class="search-input" placeholder="Nhập địa chỉ">
+                                <label>Tìm số lượng : </label>
+                                <input type="text" class="search-input" placeholder="Nhập số lượng ">
+                                <label>Tìm trạng thái xác nhận : </label>
+                                <input type="text" class="search-input" placeholder="Nhập trạng thái ">
+                                <button type="submit" class="search-button">
+                                    <span class="icon_search"></span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="row" style="border: 2px solid white; padding: 17px;">
-            <div class="col-lg-12">
-                <table class="table table-bordered text-center" style="border: 2px solid black">
-                    <thead>
-                        <tr>
-                            <th style="border: 2px solid black; text-align: center;">STT</th>
-                            <th style="border: 2px solid black; text-align: center;">Mã đơn hàng</th>
-                            <th style="border: 2px solid black; text-align: center;">Người đặt</th>
-                            <th style="border: 2px solid black; text-align: center;">SĐT</th>
-                            <th style="border: 2px solid black; text-align: center;">Ngày đặt</th>
-                            <th style="border: 2px solid black; text-align: center;">Tình trạng</th>
-                            <th style="border: 2px solid black; text-align: center;">Địa Chỉ</th>
-                            <th style="border: 2px solid black; text-align: center;">Số Lượng</th>
-                            <th style="border: 2px solid black; text-align: center;">Ghi chú</th>
-                            <th style="border: 2px solid black; text-align: center;">Trạng thái xác nhận</th>
-                            <th style="border: 2px solid black; text-align: center;">Chi tiết</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td style="border: 2px solid black">
-                                <div id="product-statistics" class="dashboard-chart">
-                                    <p>1</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="category-statistics" class="dashboard-chart">
-                                    <p>DH001</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>Nguyễn Văn A	</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="other-statistics" class="dashboard-chart">
-                                    <p>0123456789</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>2024-11-15</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>chưa xử lý</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>123 Đường ABC, Quận 1, HCM</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>4 đôi</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>chưa nhận hàng</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>chưa xác nhận</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <a id="fix-statistics" class="btn btn-primary btn-sm" href="#">xem</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="border: 2px solid black">
-                                <div id="product-statistics" class="dashboard-chart">
-                                    <p>2</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="category-statistics" class="dashboard-chart">
-                                    <p>DH002</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>Trần Thị B</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="other-statistics" class="dashboard-chart">
-                                    <p>0987654321</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>2024-11-14</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>đã giao thành công</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>456 Đường DEF, Quận 2, Hà Nội</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>6 đôi</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>đã nhận hàng</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>đã xác nhận</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <a id="fix-statistics" class="btn btn-primary btn-sm" href="#">xem</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="border: 2px solid black">
-                                <div id="product-statistics" class="dashboard-chart">
-                                    <p>3</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="category-statistics" class="dashboard-chart">
-                                    <p>DH003</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>Phạm Văn C</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="other-statistics" class="dashboard-chart">
-                                    <p>0345678901</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>2024-11-13</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>đã huỷ</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>	789 Đường MNP, Quận 3, Đà Nẵng</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>3 đôi</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>hàng trả về</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>đã huỷ</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <a id="fix-statistics" class="btn btn-primary btn-sm" href="#">xem</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="border: 2px solid black">
-                                <div id="product-statistics" class="dashboard-chart">
-                                    <p>4</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="category-statistics" class="dashboard-chart">
-                                    <p>DH004</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>Lê Thị D </p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="other-statistics" class="dashboard-chart">
-                                    <p>0123456780</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>2024-11-12</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>chưa xử lý</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>312 Đường ZYQ, Quận 4, Hải Phòng</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>5 đôi</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>chưa nhận hàng</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <div id="revenue-statistics" class="dashboard-chart">
-                                    <p>chưa xác nhận</p>
-                                </div>
-                            </td>
-                            <td style="border: 2px solid black">
-                                <a id="fix-statistics" class="btn btn-primary btn-sm" href="#">xem</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
 
-        </div>
+                <div class="row" style="border: 2px solid white; padding: 17px;">
+                    <div class="col-lg-12">
+                        <table class="table table-bordered text-center" style="border: 2px solid black">
+                            <thead>
+                                <tr>
+                                    <th style="border: 2px solid black; text-align: center;">STT</th>
+                                    <th style="border: 2px solid black; text-align: center;">Mã đơn hàng</th>
+                                    <th style="border: 2px solid black; text-align: center;">Người đặt</th>
+                                    <th style="border: 2px solid black; text-align: center;">SĐT</th>
+                                    <th style="border: 2px solid black; text-align: center;">Ngày đặt</th>
+                                    <th style="border: 2px solid black; text-align: center;">Tình trạng</th>
+                                    <th style="border: 2px solid black; text-align: center;">Địa Chỉ</th>
+                                    <th style="border: 2px solid black; text-align: center;">Số Lượng</th>
+                                    <th style="border: 2px solid black; text-align: center;">Ghi chú</th>
+                                    <th style="border: 2px solid black; text-align: center;">Trạng thái xác nhận</th>
+                                    <th style="border: 2px solid black; text-align: center;">Chi tiết</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="border: 2px solid black">
+                                        <div id="product-statistics" class="dashboard-chart">
+                                            <p>1</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="category-statistics" class="dashboard-chart">
+                                            <p>DH001</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>Nguyễn Văn A </p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="other-statistics" class="dashboard-chart">
+                                            <p>0123456789</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>2024-11-15</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>chưa xử lý</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>123 Đường ABC, Quận 1, HCM</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>4 đôi</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>chưa nhận hàng</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>chưa xác nhận</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <a id="fix-statistics" class="btn btn-primary btn-sm"
+                                            href="order-detail.html">xem</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 2px solid black">
+                                        <div id="product-statistics" class="dashboard-chart">
+                                            <p>2</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="category-statistics" class="dashboard-chart">
+                                            <p>DH002</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>Trần Thị B</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="other-statistics" class="dashboard-chart">
+                                            <p>0987654321</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>2024-11-14</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>đã giao thành công</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>456 Đường DEF, Quận 2, Hà Nội</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>6 đôi</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>đã nhận hàng</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>đã xác nhận</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <a id="fix-statistics" class="btn btn-primary btn-sm"
+                                            href="order-detail.html">xem</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 2px solid black">
+                                        <div id="product-statistics" class="dashboard-chart">
+                                            <p>3</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="category-statistics" class="dashboard-chart">
+                                            <p>DH003</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>Phạm Văn C</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="other-statistics" class="dashboard-chart">
+                                            <p>0345678901</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>2024-11-13</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>đã huỷ</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p> 789 Đường MNP, Quận 3, Đà Nẵng</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>3 đôi</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>hàng trả về</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>đã huỷ</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <a id="fix-statistics" class="btn btn-primary btn-sm"
+                                            href="order-detail.html">xem</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 2px solid black">
+                                        <div id="product-statistics" class="dashboard-chart">
+                                            <p>4</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="category-statistics" class="dashboard-chart">
+                                            <p>DH004</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>Lê Thị D </p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="other-statistics" class="dashboard-chart">
+                                            <p>0123456780</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>2024-11-12</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>chưa xử lý</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>312 Đường ZYQ, Quận 4, Hải Phòng</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>5 đôi</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>chưa nhận hàng</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <div id="revenue-statistics" class="dashboard-chart">
+                                            <p>chưa xác nhận</p>
+                                        </div>
+                                    </td>
+                                    <td style="border: 2px solid black">
+                                        <a id="fix-statistics" class="btn btn-primary btn-sm"
+                                            href="order-detail.html">xem</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
     </main>
     <!-- Main Dashboard Content End -->
+
+
     <!-- Footer Section Begin -->
     <footer class="footer">
         <div class="container">
