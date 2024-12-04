@@ -24,27 +24,60 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
+    <!-- <style> 
+    body { 
+        font-family: Arial, sans-serif; 
+    } 
+     table { 
+        width: 100%; 
+        border-collapse: collapse; 
+    } 
+    th, td { 
+        border: 1px solid #ddd; 
+        padding: 8px; 
+        text-align: center; 
+    } 
+    th { 
+        background-color: #f2f2f2; 
+    } 
+    tr:nth-child(even) { 
+        background-color: #f9f9f9; 
+    } 
+    tr:hover { 
+        background-color: #ddd;  
+    } 
+    .details-button { 
+        background-color: #007bff; 
+        color: white; 
+        border: none; 
+        padding: 5px 10px; 
+        text-decoration: none; 
+        cursor: pointer; 
+    }
+    </style> -->
     <style>
         /* Table styling */
-        .table {
+        table {
             width: 100%;
             text-align: center;
             table-layout: fixed;
             /* Ensures columns have equal width */
         }
 
-        .table th,
-        .table td {
+        table th,table td {
             vertical-align: middle;
             /* Center-align vertically */
             border: 2px solid black;
-        }
+            width: 30px;
+            height: 60px;
+            padding: 1em;
+        };
 
-        .table th {
+        table th {
             font-weight: bold;
         }
 
-        .table p {
+        table p {
             margin: 0;
             /* Remove default paragraph margin */
         }
@@ -81,7 +114,7 @@
                             <li><a href="./admin.html">Tổng quan </a></li>
                             <li><a href="./Qltk.html">Quản lý tài khoản</a></li>
                             <li><a href="./Qlsp.html">Quản lý sản phẩm</a></li>
-                            <li class="active"><a href="./Qldh.html">Quản lý đơn hàng</a></li>
+                            <li><a href="./Qldh.html">Quản lý đơn hàng</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -127,194 +160,65 @@
         <div class="container-fluid">
             <div class="row mt-5">
                 <div class="col-lg-12">
-                    <h2 class="text-center mb-4">Danh sách đơn hàng</h2>
-                    <div class="filter-section text-center mb-4">
-                        <form action="Qldh.html" method="GET">
-                            <label>Tìm số thứ tự :</label>
-                            <input type="text" class="search-input" placeholder="Nhập số thứ tự">
-                            <label>Tìm mã đơn hàng :</label>
-                            <input type="text" class="search-input" placeholder="Nhập mã đơn hàng">
-                            <label>Tìm tên khách hàng :</label>
-                            <input type="text" class="search-input" placeholder="Nhập tên khách hàng">
-                            <label>Tìm số điện thoại :</label>
-                            <input type="text" class="search-input" placeholder="Nhập số điện thoại">
-                        </form>
-                    </div>
+                    <h2 class="text-center mb-4">Danh sách đơn hàng đã mua sản phẩm</h2>
                 </div>
             </div>
+            <table>
+                <thead> 
+                    <tr> 
+                        <th>STT</th> 
+                        <th>Mã đơn hàng</th> 
+                        <th>Người đặt</th> 
+                        <th>SDT</th> 
+                        <th>Ngày đặt</th> 
+                        <th>Tình trạng</th> 
+                        <th>Địa chỉ</th> 
+                        <th>Số lượng</th> 
+                        <th>Ghi chú</th> 
+                        <th>Chi tiết</th> 
+                    </tr> 
+                </thead> 
+                <tbody> 
+                    <tr> 
+                        <td>1</td> 
+                        <td>DH001</td> 
+                        <td>Nguyễn Văn A</td> 
+                        <td>0123456789</td> 
+                        <td>2024-11-01</td> 
+                        <td>Chưa xử lý</td> 
+                        <td>Hà Nội</td> 
+                        <td>3 đôi</td> 
+                        <td>Giao hàng trước 12h</td> 
+                        <td><a href="order-detail.html" class="btn btn-primary btn-sm">Xem chi tiết</a></td> 
+                    </tr> 
+                    <tr> 
+                        <td>2</td> 
+                        <td>DH002</td> 
+                        <td>Trần Thị B</td> 
+                        <td>0987654321</td> 
+                        <td>2024-11-02</td> 
+                        <td>Đã hủy</td> 
+                        <td>TP. Hồ Chí Minh</td> 
+                        <td>2 đôi</td> 
+                        <td>Kiểm tra kỹ sản phẩm</td> 
+                        <td><a href="order-detail.html" class="btn btn-primary btn-sm">Xem chi tiết</a></td> 
+                    </tr> 
+                    <tr> 
+                        <td>3</td> 
+                        <td>DH003</td> 
+                        <td>Lê Thị D</td> 
+                        <td>0123456780</td> 
+                        <td>2024-11-12</td> 
+                        <td>Đã giao thành công</td> 
+                        <td>TP. Hồ Chí Minh</td>
+                        <td>3 đôi</td> 
+                        <td>Không ghi chú</td> 
+                        <td><a href="order-detail.html" class="btn btn-primary btn-sm">Xem chi tiết</a></td>
+                    </tr> 
+                </tbody>
+            </table>
             <div class="container-fluid">
-                <div class="row mt-0">
-                    <div class="col-lg-12">
-                        <div class="filter-section text-center mb-4">
-                            <form action="Qldh.html" method="GET">
-                                <label>Tìm địa chỉ </label>
-                                <input type="text" class="search-input" placeholder="Nhập địa chỉ">
-                                <label>Tìm số lượng : </label>
-                                <input type="text" class="search-input" placeholder="Nhập số lượng ">
-                                <label>Tìm trạng thái xác nhận : </label>
-                                <input type="text" class="search-input" placeholder="Nhập trạng thái ">
-                                <button type="submit" class="search-button">
-                                    <span class="icon_search"></span>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!-- Bảng hiển thị đơn hàng -->
-                <div class="row" style="border: 2px solid white; padding: 17px;">
-                    <div class="col-lg-12">
-                        <table class="table table-bordered text-center">
-                            <thead>
-                                <tr>
-                                    <th style="border: 2px solid black;">STT</th>
-                                    <th style="border: 2px solid black;">Mã đơn hàng</th>
-                                    <th style="border: 2px solid black;">Người đặt</th>
-                                    <th style="border: 2px solid black;">SĐT</th>
-                                    <th style="border: 2px solid black;">Ngày đặt</th>
-                                    <th style="border: 2px solid black;">Tình trạng</th>
-                                    <th style="border: 2px solid black;">Địa chỉ</th>
-                                    <th style="border: 2px solid black;">Số lượng</th>
-                                    <th style="border: 2px solid black;">Ghi chú</th>
-                                    <th style="border: 2px solid black;">Trạng thái xác nhận</th>
-                                    <th style="border: 2px solid black;">Chi tiết</th>
-                                </tr>
-                            </thead>
-                            <tbody id="order-table">
-                                <!-- Rows will be rendered dynamically -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <script>
-                    // Dữ liệu mẫu
-                    const orders = [
-                        {
-                            id: 1,
-                            Ordercode: "DH001",
-                            customer: "Nguyễn Văn A",
-                            phone: "0123456789",
-                            date: "2024-11-01",
-                            status: "Chưa xử lý",
-                            address: "Hà Nội",
-                            quantity: "3 đôi",
-                            note: "Giao hàng trước 12h",
-                            confirmation: "Chưa xác nhận"
-                        },
-                        {
-                            id: 2,
-                            Ordercode: "DH002",
-                            customer: "Trần Thị B",
-                            phone: "0987654321",
-                            date: "2024-11-02",
-                            status: "Đã Huỷ",
-                            address: "TP. Hồ Chí Minh",
-                            quantity: "2 đôi",
-                            note: "Kiểm tra kỹ sản phẩm",
-                            confirmation: "Đã xác nhận"
-                        },
-                        {
-                            id: 3,
-                            Ordercode: "DH003",
-                            customer: "Lê Thị D",
-                            phone: "0123456780",
-                            date: "2024-11-12",
-                            status: "Đã giao thành công",
-                            address: "TP. Hồ Chí Minh",
-                            quantity: "3 đôi",
-                            note: "Giao nhầm hàng",
-                            confirmation: "Đã Huỷ"
-                        },
-                        {
-                            id: 4,
-                            Ordercode: "DH004",
-                            customer: "Huy Ho",
-                            phone: "0123456780",
-                            date: "2024-11-12",
-                            status: "Đã giao thành công",
-                            address: "TP. Hồ Chí Minh",
-                            quantity: "3 đôi",
-                            note: "Giao nhầm hàng",
-                            confirmation: "Đã Huỷ"
-                        },
-                        {
-                            id: 5,
-                            Ordercode: "DH005",
-                            customer: "Nguyễn Văn A",
-                            phone: "0123456789",
-                            date: "2024-11-15",
-                            status: "Chưa xử lý",
-                            address: "Quận 1",
-                            quantity: "8 đôi",
-                            note: "Kiểm tra kỹ sản phẩm",
-                            confirmation: "Chưa xác nhận"
-                        },
-                        {
-                            id: 6,
-                            Ordercode: "DH006",
-                            customer: "Trần Thị B",
-                            phone: "0987654321",
-                            date: "2024-11-14",
-                            status: "Đã giao thành công",
-                            address: "Quận 2",
-                            quantity: "11 đôi",
-                            note: "Kiểm tra kỹ sản phẩm",
-                            confirmation: "Đã xác nhận"
-                        },
-                        {
-                            id: 7,
-                            Ordercode: "DH007",
-                            customer: "Phạm Văn C",
-                            phone: "0345678901",
-                            date: "2024-11-13",
-                            status: "Đã huỷ",
-                            address: "Quận 3",
-                            quantity: "3 đôi",
-                            note: "Giao nhầm hàng",
-                            confirmation: "Đã huỷ"
-                        },
-                        {
-                            id: 8,
-                            Ordercode: "DH008",
-                            customer: "Lê Thị D",
-                            phone: "0123456780",
-                            date: "2024-11-12",
-                            status: "Chưa xử lý",
-                            address: "Quận 4",
-                            quantity: "5 đôi",
-                            note: "Kiểm tra kỹ sản phẩm",
-                            confirmation: "Chưa xác nhận"
-                        }
-                    ];
-
-                    // Hàm hiển thị bảng
-                    function renderTable() {
-                        const tableBody = document.getElementById("order-table");
-                        tableBody.innerHTML = "";
-                        orders.forEach((order, index) => {
-                            const row = `
-                <tr>
-                    <td style="border: 2px solid black;">${index + 1}</td>
-                    <td style="border: 2px solid black;">${order.Ordercode}</td>
-                    <td style="border: 2px solid black;">${order.customer}</td>
-                    <td style="border: 2px solid black;">${order.phone}</td>
-                    <td style="border: 2px solid black;">${order.date}</td>
-                    <td style="border: 2px solid black;">${order.status}</td>
-                    <td style="border: 2px solid black;">${order.address}</td>
-                    <td style="border: 2px solid black;">${order.quantity}</td>
-                    <td style="border: 2px solid black;">${order.note}</td>
-                    <td style="border: 2px solid black;">${order.confirmation}</td>
-                    <td style="border: 2px solid black;">
-                        <a href="order-detail.html" class="btn btn-primary btn-sm">Xem chi tiết</a>
-                    </td>
-                </tr>
-            `;
-                            tableBody.innerHTML += row;
-                        });
-                    }
-
-                    // Hiển thị dữ liệu ban đầu
-                    renderTable();
-                </script>
+                
                 <!-- Footer Section Begin -->
                 <footer class="footer">
                     <div class="container">
@@ -409,5 +313,4 @@
                 <script src="js/jquery.nicescroll.min.js"></script>
                 <script src="js/main.js"></script>
 </body>
-
 </html>

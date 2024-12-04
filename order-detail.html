@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Ashion Template">
+    <meta name="keywords" content="Ashion, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sửa Thông Tin Khách Hàng</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ashion with Fashion</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -16,12 +24,14 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="css/admin.css" type="text/css">
-    <link rel="stylesheet" href="css/tq.css" type="text/css">
+    <link rel="stylesheet" href="css/chitietdh.css" type="text/css">
+
+    <title>Chi Tiết Đơn Hàng</title>
 </head>
+
 <body>
-     <!-- Page Preloder -->
-     <div id="preloder">
+    <!-- Page Preloder -->
+    <div id="preloder">
         <div class="loader"></div>
     </div>
 
@@ -47,9 +57,9 @@
                     <nav class="header__menu">
                         <ul>
                             <li><a href="./admin.html">Tổng quan </a></li>
-                            <li class="active"><a href="./Qltk.html">Quản lý tài khoản</a></li>
+                            <li><a href="./Qltk.html">Quản lý tài khoản</a></li>
                             <li><a href="./Qlsp.html">Quản lý sản phẩm</a></li>
-                            <li><a href="./Qldh.html">Quản lý đơn hàng</a></li>
+                            <li class="active"><a href="./Qldh.html">Quản lý đơn hàng</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -70,11 +80,11 @@
                                         <a href="#" class="user-link"><img src="img/user-profile.png"
                                                 width="45px"></img></a>
                                         <div class="dropdown-menu">
-                                            <hr style="border: 1px dashed gray;">
+                                            <strong>Tài khoản: <span>Mãi Bên Em</span></strong>
                                             <a class="action-button-link" style="text-decoration: none"
-                                                href="dangnhapad.html">Đăng Nhập</a>
+                                                href="admin.html">Đổi Mật Khẩu</a>
                                             <a class="action-button-link" style="text-decoration: none"
-                                                href="dangnhapad.html">Đăng kí</a>
+                                                href="admin.html">Đăng Xuất</a>
                                         </div>
                                     </div>
                                 </li>
@@ -82,95 +92,121 @@
                         </div>
                     </div>
                 </div>
+                <div class="canvas__open">
+                    <i class="fa fa-bars"></i>
+                </div>
             </div>
-            <div class="canvas__open">
-                <i class="fa fa-bars"></i>
-            </div>
-        </div>
     </header>
     <!-- Header Section End -->
+    <div class="order-container" style="margin-top: 30px;">
+        <header class="order-header">
+            <h1>Chi Tiết Đơn Hàng</h1>
+            <p class="order-id">Mã đơn hàng: <span id="order-id">F419</span></p>
+            <p class="order-date">Ngày đặt hàng: <span id="order-date">06/09/2024</span></p>
+        </header>
 
-    <div class="container mt-5" style="border-radius: 8px;">
-        <h2 style="text-align: center;">Sửa Thông Tin Tài Khoản</h2>
-        <form id="edit-form">
-            <div class="mb-3">
-                <label for="customer-stt" class="form-label">Tên đăng nhập</label>
-                <input type="text" class="form-control" id="customer-stt" readonly>
-            </div>
-            <div class="mb-3">
-                <label for="customer-name" class="form-label">Họ tên</label>
-                <input type="text" class="form-control" id="customer-name">
-            </div>
-            <div class="mb-3">
-                <label for="customer-birthday" class="form-label">Ngày sinh</label>
-                <input type="text" class="form-control" id="customer-birthday">
-            </div>
-            <div class="mb-3">
-                <label for="customer-phone" class="form-label">SĐT</label>
-                <input type="text" class="form-control" id="customer-phone">
-            </div>
-            <div class="mb-3">
-                <label for="customer-role" class="form-label">Vai trò</label>
-                <input type="text" class="form-control" id="customer-role">
-            </div>
-            <div class="mb-3">
-                <label for="customer-email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="customer-email">
-            </div>
-            <div class="mb-3">
-                <label for="customer-address" class="form-label">Địa chỉ</label>
-                <input type="email" class="form-control" id="customer-address">
-            </div>
-            <button type="button" class="btn btn-primary" onclick="saveChanges()">Lưu Thay Đổi</button>
-            <a href="Qltk.html" class="btn btn-secondary">Quay Lại</a>
-        </form>
+        <!-- Thông tin khách hàng -->
+        <section class="customer-info">
+            <h2>Thông Tin Khách Hàng</h2>
+            <table>
+                <tr>
+                    <td>Tên Khách Hàng:</td>
+                    <td><span id="customer-name">WUYY Hồ</span></td>
+                </tr>
+                <tr>
+                    <td>Địa Chỉ:</td>
+                    <td><span id="customer-address">273 Đ. An Dương Vương, Phường 3, Quận 5, TP.Hồ Chí Minh</span></td>
+                </tr>
+                <tr>
+                    <td>Số Điện Thoại:</td>
+                    <td><span id="customer-phone">0707360972</span></td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Chi tiết sản phẩm -->
+        <section class="order-items">
+            <h2>Sản Phẩm Đặt Mua</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hình Ảnh</th>
+                        <th>Tên Sản Phẩm</th>
+                        <th>Số Lượng</th>
+                        <th>Size</th>
+                        <th>Đơn Giá</th>
+                        <th>Thành Tiền</th>
+                    </tr>
+                </thead>
+                <tbody id="order-items-list">
+                    <tr class="product-item">
+                        <td><img src="img/shop/shop-1.jpg" alt="Áo sơ mi"></td>
+                        <td>Nike Air Force 1 '07 High</td>
+                        <td>2</td>
+                        <td>41</td>
+                        <td>2.645.000 đ</td>
+                        <td>2.645.000 đ</td>
+                    </tr>
+                    <tr class="product-item">
+                        <td><img src="img/shop/shop-2.jpg" alt="Áo sơ mi"></td>
+                        <td>Nike SFB Field 2 8”</td>
+                        <td>2</td>
+                        <td>41</td>
+                        <td>2.645.000 đ</td>
+                        <td>2.645.000 đ</td>
+                    </tr>
+                    <tr class="product-item">
+                        <td><img src="img/shop/shop-9.jpg" alt="Áo sơ mi"></td>
+                        <td>Air Jordan 1 Elevate High</td>
+                        <td>2</td>
+                        <td>41</td>
+                        <td>2.645.000 đ</td>
+                        <td>2.645.000 đ</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Tóm tắt đơn hàng -->
+        <section class="order-summary">
+            <h2>Tóm Tắt Đơn Hàng</h2>
+            <table>
+                <tr>
+                    <td style="width: 301.61px;">Tổng Tiền Sản Phẩm:</td>
+                    <td><span id="total-product">7,935,000₫</span></td>
+                </tr>
+                <tr class="total-row">
+                    <td style="color: #27ae60; font-size: 18px; font-weight: bold;">Tổng Tiền Thanh Toán:</td>
+                    <td style="color: #27ae60; font-size: 18px; font-weight: bold;"><span id="total-payment">7,935,000₫</span></td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Thông tin giao hàng -->
+        <section class="shipping-info">
+            <h2>Thông Tin Giao Hàng</h2>
+            <table>
+                <tr>
+                    <td style="width: 301.61px;">Phương Thức Vận Chuyển:</td>
+                    <td><span id="shipping-method">Giao hàng tiêu chuẩn</span></td>
+                </tr>
+                <tr>
+                    <td>Thời Gian Dự Kiến:</td>
+                    <td><span id="delivery-time">08/09/2024</span></td>
+                </tr>
+                <tr>
+                    <td>Trạng Thái Đơn Hàng:</td>
+                    <td><span id="order-status">Đã hoàn thành</span></td>
+                </tr>
+            </table>
+        </section>
     </div>
+    
+</body>
 
-    <script>
-        // Lấy dữ liệu khách hàng từ URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const customerId = urlParams.get('id');
-
-        // Dữ liệu mẫu
-        const customers = [
-            { id: 1, customer: "Nguyễn Văn A",birth: "2003-12-12", phone: "0123456789", part: "Quản trị viên", email: "a@gmail.com" },
-            { id: 2, customer: "Trần Thị B",birth: "2003-12-12", phone: "0987654321", part: "khách hàng", email: "b@gmail.com" },
-            { id: 3, customer: "Phạm Văn C",birth: "2003-12-12", phone: "0345678901", part: "Nhân viên ", email: "c@gmail.com" },
-            { id: 4, customer: "Lê Thị D",birth: "2003-12-12", phone: "0123456780", part: "Khách hàng", email: "d@gmail.com" }
-        ];
-
-        // Tìm khách hàng theo ID
-        const customer = customers.find(c => c.id == customerId);
-
-        // Điền dữ liệu vào form
-        if (customer) {
-            document.getElementById('customer-stt').value = "abc";
-            document.getElementById('customer-name').value = customer.customer;
-            document.getElementById('customer-birthday').value = customer.birth;
-            document.getElementById('customer-phone').value = customer.phone;
-            document.getElementById('customer-role').value = customer.part;
-            document.getElementById('customer-email').value = customer.email;
-        } else {
-            alert("Không tìm thấy khách hàng");
-        }
-
-        // Lưu thay đổi
-        function saveChanges() {
-            const updatedCustomer = {
-                id: document.getElementById('customer-stt').value,
-                customer: document.getElementById('customer-name').value,
-                birth: document.getElementById('customer-birthday').value,
-                phone: document.getElementById('customer-phone').value,
-                part: document.getElementById('customer-role').value,
-                email: document.getElementById('customer-email').value
-            };
-
-            console.log("Đã lưu thay đổi:", updatedCustomer);
-            alert("Thông tin khách hàng đã được cập nhật.");
-        }
-    </script>
-       <!-- Footer Section Begin -->
-       <footer class="footer">
+    <!-- Footer Section Begin -->
+    <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-7">
@@ -250,7 +286,7 @@
         </div>
     </div>
     <!-- Search End -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -262,5 +298,8 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.nicescroll.min.js"></script>
     <script src="js/main.js"></script>
-</body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+
 </html>

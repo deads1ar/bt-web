@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/admin.css" type="text/css">
-    <link rel="stylesheet" href="css/tq.css" type="text/css">
 
     <style>
         /* Table styling */
@@ -237,7 +236,6 @@
         <!--================================= Biểu đồ ===================================-->
         <div class="row justify-content-center mt-5">
             <div class="col-lg-6">
-                <h3 class="text-center">Top 5 Loại Giày Bán Chạy Trong Quý</h3>
                 <canvas id="shoeChart" width="400" height="300"></canvas>
             </div>
         </div>
@@ -257,12 +255,12 @@
                     <tr>
                         <td>
                             <div id="product-statistics" class="dashboard-chart">
-                                <p>Nike Air Max</p>
+                                <p>Nike Air Max</p><a href="donhangchuasp.html">(Xem đơn hàng)</a>
                             </div>
                         </td>
                         <td>
                             <div id="category-statistics" class="dashboard-chart">
-                                <p>150</p>
+                                <p>220</p>
                             </div>
                         </td>
                         <td>
@@ -284,7 +282,7 @@
                     <tr>
                         <td>
                             <div id="product-statistics" class="dashboard-chart">
-                                <p>Adidas Ultraboost</p>
+                                <p>Adidas Ultraboost</p><a href="donhangchuasp.html">(Xem đơn hàng)</a>
                             </div>
                         </td>
                         <td>
@@ -311,7 +309,7 @@
                     <tr>
                         <td>
                             <div id="product-statistics" class="dashboard-chart">
-                                <p>Nike Lebron</p>
+                                <p>Nike Lebron</p><a href="donhangchuasp.html">(Xem đơn hàng)</a>
                             </div>
                         </td>
                         <td>
@@ -338,12 +336,12 @@
                     <tr>
                         <td>
                             <div id="product-statistics" class="dashboard-chart">
-                                <p>Nike Cortez OG</p>
+                                <p>Nike Cortez OG</p><a href="donhangchuasp.html">(Xem đơn hàng)</a>
                             </div>
                         </td>
                         <td>
                             <div id="category-statistics" class="dashboard-chart">
-                                <p>220</p>
+                                <p>170</p>
                             </div>
                         </td>
                         <td>
@@ -365,12 +363,12 @@
                     <tr>
                         <td>
                             <div id="product-statistics" class="dashboard-chart">
-                                <p>Nike Court</p>
+                                <p>Nike Court</p><a href="donhangchuasp.html">(Xem đơn hàng)</a>
                             </div>
                         </td>
                         <td>
                             <div id="category-statistics" class="dashboard-chart">
-                                <p>170</p>
+                                <p>136</p>
                             </div>
                         </td>
                         <td>
@@ -498,27 +496,29 @@
         const canvasOptions = {
             maintainAspectRatio: false, // Disable automatic resizing
             responsive: true,
-            width: 600,
+            width: 900,
             height: 400
         };
         const shoeData = {
             labels: ['Nike Air Max', 'Adidas Ultraboost', ' Nike Cortez OG', 'Nike Lebron ', 'Nike Court'],
             datasets: [{
                 label: 'Số lượng bán (Đôi)',
-                data: [150, 200, 180, 220, 170], // Số liệu ngẫu nhiên
+                data: [220, 200, 180, 170, 136, 200], // Số liệu ngẫu nhiên
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.6)',
                     'rgba(54, 162, 235, 0.6)',
                     'rgba(255, 206, 86, 0.6)',
                     'rgba(75, 192, 192, 0.6)',
-                    'rgba(153, 102, 255, 0.6)'
+                    'rgba(153, 102, 255, 0.6)',
+                    'rgba(153, 102, 0, 0.6)'
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
                     'rgba(54, 162, 235, 1)',
                     'rgba(255, 206, 86, 1)',
                     'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)'
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(153, 102, 0, 0.6)'
                 ],
                 borderWidth: 1
             }]

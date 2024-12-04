@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sửa Thông Tin Khách Hàng</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <title>Add User</title>
     <link rel="stylesheet" href="css/style.css" type="text/css">
-
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
@@ -17,25 +15,76 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/admin.css" type="text/css">
-    <link rel="stylesheet" href="css/tq.css" type="text/css">
+    
+    <style>
+        body {
+            font-family: "Montserrat", sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            font-family: Arial;
+            font-size: 16px;
+        }
+        .container1 {
+            font-family: Arial;
+            font-size: 16px;
+            max-width: 1200px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            padding: 6px;
+            box-sizing: border-box;
+        }
+        .form-actions {
+            text-align: center;
+        }
+        .form-actions button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-actions button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-     <!-- Page Preloder -->
-     <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Offcanvas Menu Begin -->
-    <div class="offcanvas-menu-overlay"></div>
-    <div class="offcanvas-menu-wrapper">
-        <div class="offcanvas__logo">
-            <a href="./index.html"><img src="img/logo.png" alt=""></a>
-        </div>
-    </div>
-    <!-- Offcanvas Menu End -->
-
-    <!-- Header Section Begin -->
-    <header class="header">
+       <!-- Header Section Begin -->
+       <header class="header">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-3 col-lg-2">
@@ -89,88 +138,48 @@
         </div>
     </header>
     <!-- Header Section End -->
-
-    <div class="container mt-5" style="border-radius: 8px;">
-        <h2 style="text-align: center;">Sửa Thông Tin Tài Khoản</h2>
-        <form id="edit-form">
-            <div class="mb-3">
-                <label for="customer-stt" class="form-label">Tên đăng nhập</label>
-                <input type="text" class="form-control" id="customer-stt" readonly>
+    <div class="container1">
+        <h2  style="text-align: center;">Thêm người dùng</h2>
+        <form onsubmit="redirectToQltk(event)"method="POST">
+            <div class="form-group" >
+                <label for="stt">Tên đăng nhập</label>
+                <input style="border-radius: 3px;border-width: 1px;border-color: #ddd;" type="text" id="stt" name="stt" placeholder="Nhập tên tài khoản" >
             </div>
-            <div class="mb-3">
-                <label for="customer-name" class="form-label">Họ tên</label>
-                <input type="text" class="form-control" id="customer-name">
+            <div class="form-group">
+                <label for="name">Họ và tên</label>
+                <input style="border-radius: 3px;border-width: 1px;border-color: #ddd;" type="text" id="name" name="name" placeholder="Nhập họ tên" >
             </div>
-            <div class="mb-3">
-                <label for="customer-birthday" class="form-label">Ngày sinh</label>
-                <input type="text" class="form-control" id="customer-birthday">
+            <div class="form-group">
+                <label for="phone">SĐT</label>
+                <input style="border-radius: 3px;border-width: 1px;border-color: #ddd;" type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại" >
             </div>
-            <div class="mb-3">
-                <label for="customer-phone" class="form-label">SĐT</label>
-                <input type="text" class="form-control" id="customer-phone">
+            <div class="form-group" >
+                <label for="role">Vai trò</label>
+                <select id="role" name="role" >
+                    <option value="">Chọn vai trò</option>
+                    <option value="admin">Admin</option>
+                    <option value="user">User</option>
+                </select>
             </div>
-            <div class="mb-3">
-                <label for="customer-role" class="form-label">Vai trò</label>
-                <input type="text" class="form-control" id="customer-role">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Nhập email" >
             </div>
-            <div class="mb-3">
-                <label for="customer-email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="customer-email">
+            <div class="form-group">
+                <label for="matkhau">Mật khẩu</label>
+                <input type="matkhau" id="matkhau" name="matkhau" placeholder="Nhập mật khẩu" >
             </div>
-            <div class="mb-3">
-                <label for="customer-address" class="form-label">Địa chỉ</label>
-                <input type="email" class="form-control" id="customer-address">
+            <div class="form-group">
+                <label for="diachi">Địa chỉ</label>
+                <input type="diachi" id="diachi" name="diachi" placeholder="Nhập địa chỉ" >
             </div>
-            <button type="button" class="btn btn-primary" onclick="saveChanges()">Lưu Thay Đổi</button>
-            <a href="Qltk.html" class="btn btn-secondary">Quay Lại</a>
+            <div class="form-actions">
+                <button type="submit" onclick="filterData()" >Thêm người dùng</button>
+            </div>
         </form>
     </div>
-
-    <script>
-        // Lấy dữ liệu khách hàng từ URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const customerId = urlParams.get('id');
-
-        // Dữ liệu mẫu
-        const customers = [
-            { id: 1, customer: "Nguyễn Văn A",birth: "2003-12-12", phone: "0123456789", part: "Quản trị viên", email: "a@gmail.com" },
-            { id: 2, customer: "Trần Thị B",birth: "2003-12-12", phone: "0987654321", part: "khách hàng", email: "b@gmail.com" },
-            { id: 3, customer: "Phạm Văn C",birth: "2003-12-12", phone: "0345678901", part: "Nhân viên ", email: "c@gmail.com" },
-            { id: 4, customer: "Lê Thị D",birth: "2003-12-12", phone: "0123456780", part: "Khách hàng", email: "d@gmail.com" }
-        ];
-
-        // Tìm khách hàng theo ID
-        const customer = customers.find(c => c.id == customerId);
-
-        // Điền dữ liệu vào form
-        if (customer) {
-            document.getElementById('customer-stt').value = "abc";
-            document.getElementById('customer-name').value = customer.customer;
-            document.getElementById('customer-birthday').value = customer.birth;
-            document.getElementById('customer-phone').value = customer.phone;
-            document.getElementById('customer-role').value = customer.part;
-            document.getElementById('customer-email').value = customer.email;
-        } else {
-            alert("Không tìm thấy khách hàng");
-        }
-
-        // Lưu thay đổi
-        function saveChanges() {
-            const updatedCustomer = {
-                id: document.getElementById('customer-stt').value,
-                customer: document.getElementById('customer-name').value,
-                birth: document.getElementById('customer-birthday').value,
-                phone: document.getElementById('customer-phone').value,
-                part: document.getElementById('customer-role').value,
-                email: document.getElementById('customer-email').value
-            };
-
-            console.log("Đã lưu thay đổi:", updatedCustomer);
-            alert("Thông tin khách hàng đã được cập nhật.");
-        }
-    </script>
-       <!-- Footer Section Begin -->
-       <footer class="footer">
+    <!-- Footer Section Begin -->
+    <footer class="footer" style="width: 100%;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-7">
@@ -239,28 +248,17 @@
         </div>
     </footer>
     <!-- Footer Section End -->
-
-    <!-- Search Begin -->
-    <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-            <div class="search-close-switch">+</div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Search here.....">
-            </form>
-        </div>
-    </div>
-    <!-- Search End -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/jquery.countdown.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.nicescroll.min.js"></script>
-    <script src="js/main.js"></script>
+    <script>
+        function redirectToQltk(event) {
+            event.preventDefault(); // Prevent form submission
+            // Perform any necessary actions here (e.g., save data)
+            window.location.href = 'Qltk.html'; // Redirect to admin page
+        }
+    </script>
+    <script>
+        function filterData() {
+            alert("Đã thêm thành công");
+        }
+    </script>
 </body>
 </html>
