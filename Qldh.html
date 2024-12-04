@@ -107,7 +107,7 @@
                                             <a class="action-button-link" style="text-decoration: none"
                                                 href="admin.html">Đổi Mật Khẩu</a>
                                             <a class="action-button-link" style="text-decoration: none"
-                                                href="admin.html">Đăng Xuất</a>
+                                                href="addmin.html">Đăng Xuất</a>
                                         </div>
                                     </div>
                                 </li>
@@ -125,390 +125,290 @@
     <!-- Main Dashboard Content Begin -->
     <main class="dashboard-content">
         <div class="container-fluid">
-            <div class="search-container" >    
-                <div class="row mt-5">
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <h2 class="text-center mb-4">Danh sách đơn hàng</h2>
+                    <div class="filter-section text-center mb-4">
+                        <form action="Qldh.html" method="GET">
+                            <label>Tìm số thứ tự :</label>
+                            <input type="text" class="search-input" placeholder="Nhập số thứ tự">
+                            <label>Tìm mã đơn hàng :</label>
+                            <input type="text" class="search-input" placeholder="Nhập mã đơn hàng">
+                            <label>Tìm tên khách hàng :</label>
+                            <input type="text" class="search-input" placeholder="Nhập tên khách hàng">
+                            <label>Tìm số điện thoại :</label>
+                            <input type="text" class="search-input" placeholder="Nhập số điện thoại">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row mt-0">
                     <div class="col-lg-12">
-                        <h2 class="text-center mb-4">Danh sách đơn hàng</h2>
-                        <div class="filter-section text-center mb-4" style="display: flex; margin-left: 100px;">
+                        <div class="filter-section text-center mb-4">
                             <form action="Qldh.html" method="GET">
-                                <label>Tìm số thứ tự :</label>
-                                <input type="text" class="search-input" placeholder="Nhập số thứ tự">
-                                <label>Tìm mã đơn hàng :</label>
-                                <input type="text" class="search-input" placeholder="Nhập mã đơn hàng">
-                                <label>Tìm tên khách hàng :</label>
-                                <input type="text" class="search-input" placeholder="Nhập tên khách hàng">
-                                <label>Tìm số điện thoại :</label>
-                                <input type="text" class="search-input" placeholder="Nhập số điện thoại">
+                                <label>Tìm địa chỉ </label>
+                                <input type="text" class="search-input" placeholder="Nhập địa chỉ">
+                                <label>Tìm số lượng : </label>
+                                <input type="text" class="search-input" placeholder="Nhập số lượng ">
+                                <label>Tìm trạng thái xác nhận : </label>
+                                <input type="text" class="search-input" placeholder="Nhập trạng thái ">
+                                <button type="submit" class="search-button">
+                                    <span class="icon_search"></span>
+                                </button>
                             </form>
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid">
-                    <div class="row mt-0">
-                        <div class="col-lg-9">
-                            <div class="filter-section text-center mb-4" style="display: flex; margin-left: 100px;">
-                                <form action="Qldh.html" method="GET">
-                                    <label>Tìm địa chỉ </label>
-                                    <input type="text" class="search-input" placeholder="Nhập địa chỉ">
-                                    <label>Tìm số lượng : </label>
-                                    <input type="text" class="search-input" placeholder="Nhập số lượng ">
-                                    <label>Tìm trạng thái xác nhận : </label>
-                                    <input type="text" class="search-input" placeholder="Nhập trạng thái ">
-                                    <button type="submit" class="search-button">
-                                        <span class="icon_search"></span>
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-
+                <!-- Bảng hiển thị đơn hàng -->
                 <div class="row" style="border: 2px solid white; padding: 17px;">
                     <div class="col-lg-12">
-                        <table class="table table-bordered text-center" style="border: 2px solid black">
+                        <table class="table table-bordered text-center">
                             <thead>
                                 <tr>
-                                    <th style="border: 2px solid black; text-align: center;">STT</th>
-                                    <th style="border: 2px solid black; text-align: center;">Mã đơn hàng</th>
-                                    <th style="border: 2px solid black; text-align: center;">Người đặt</th>
-                                    <th style="border: 2px solid black; text-align: center;">SĐT</th>
-                                    <th style="border: 2px solid black; text-align: center;">Ngày đặt</th>
-                                    <th style="border: 2px solid black; text-align: center;">Tình trạng</th>
-                                    <th style="border: 2px solid black; text-align: center;">Địa Chỉ</th>
-                                    <th style="border: 2px solid black; text-align: center;">Số Lượng</th>
-                                    <th style="border: 2px solid black; text-align: center;">Ghi chú</th>
-                                    <th style="border: 2px solid black; text-align: center;">Trạng thái xác nhận</th>
-                                    <th style="border: 2px solid black; text-align: center;">Chi tiết</th>
+                                    <th style="border: 2px solid black;">STT</th>
+                                    <th style="border: 2px solid black;">Mã đơn hàng</th>
+                                    <th style="border: 2px solid black;">Người đặt</th>
+                                    <th style="border: 2px solid black;">SĐT</th>
+                                    <th style="border: 2px solid black;">Ngày đặt</th>
+                                    <th style="border: 2px solid black;">Tình trạng</th>
+                                    <th style="border: 2px solid black;">Địa chỉ</th>
+                                    <th style="border: 2px solid black;">Số lượng</th>
+                                    <th style="border: 2px solid black;">Ghi chú</th>
+                                    <th style="border: 2px solid black;">Trạng thái xác nhận</th>
+                                    <th style="border: 2px solid black;">Chi tiết</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="border: 2px solid black">
-                                        <div id="product-statistics" class="dashboard-chart">
-                                            <p>1</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="category-statistics" class="dashboard-chart">
-                                            <p>DH001</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>Nguyễn Văn A </p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="other-statistics" class="dashboard-chart">
-                                            <p>0123456789</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>2024-11-15</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>chưa xử lý</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>123 Đường ABC, Quận 1, HCM</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>4 đôi</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>chưa nhận hàng</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>chưa xác nhận</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <a id="fix-statistics" class="btn btn-primary btn-sm"
-                                            href="order-detail.html">xem</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="border: 2px solid black">
-                                        <div id="product-statistics" class="dashboard-chart">
-                                            <p>2</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="category-statistics" class="dashboard-chart">
-                                            <p>DH002</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>Trần Thị B</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="other-statistics" class="dashboard-chart">
-                                            <p>0987654321</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>2024-11-14</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>đã giao thành công</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>456 Đường DEF, Quận 2, Hà Nội</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>6 đôi</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>đã nhận hàng</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>đã xác nhận</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <a id="fix-statistics" class="btn btn-primary btn-sm"
-                                            href="order-detail.html">xem</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="border: 2px solid black">
-                                        <div id="product-statistics" class="dashboard-chart">
-                                            <p>3</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="category-statistics" class="dashboard-chart">
-                                            <p>DH003</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>Phạm Văn C</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="other-statistics" class="dashboard-chart">
-                                            <p>0345678901</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>2024-11-13</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>đã huỷ</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p> 789 Đường MNP, Quận 3, Đà Nẵng</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>3 đôi</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>hàng trả về</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>đã huỷ</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <a id="fix-statistics" class="btn btn-primary btn-sm"
-                                            href="order-detail.html">xem</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="border: 2px solid black">
-                                        <div id="product-statistics" class="dashboard-chart">
-                                            <p>4</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="category-statistics" class="dashboard-chart">
-                                            <p>DH004</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>Lê Thị D </p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="other-statistics" class="dashboard-chart">
-                                            <p>0123456780</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>2024-11-12</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>chưa xử lý</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>312 Đường ZYQ, Quận 4, Hải Phòng</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>5 đôi</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>chưa nhận hàng</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <div id="revenue-statistics" class="dashboard-chart">
-                                            <p>chưa xác nhận</p>
-                                        </div>
-                                    </td>
-                                    <td style="border: 2px solid black">
-                                        <a id="fix-statistics" class="btn btn-primary btn-sm"
-                                            href="order-detail.html">xem</a>
-                                    </td>
-                                </tr>
+                            <tbody id="order-table">
+                                <!-- Rows will be rendered dynamically -->
                             </tbody>
                         </table>
                     </div>
                 </div>
-        </div>
-    </main>
-    <!-- Main Dashboard Content End -->
 
+                <script>
+                    // Dữ liệu mẫu
+                    const orders = [
+                        {
+                            id: 1,
+                            Ordercode: "DH001",
+                            customer: "Nguyễn Văn A",
+                            phone: "0123456789",
+                            date: "2024-11-01",
+                            status: "Chưa xử lý",
+                            address: "Hà Nội",
+                            quantity: "3 đôi",
+                            note: "Giao hàng trước 12h",
+                            confirmation: "Chưa xác nhận"
+                        },
+                        {
+                            id: 2,
+                            Ordercode: "DH002",
+                            customer: "Trần Thị B",
+                            phone: "0987654321",
+                            date: "2024-11-02",
+                            status: "Đã Huỷ",
+                            address: "TP. Hồ Chí Minh",
+                            quantity: "2 đôi",
+                            note: "Kiểm tra kỹ sản phẩm",
+                            confirmation: "Đã xác nhận"
+                        },
+                        {
+                            id: 3,
+                            Ordercode: "DH003",
+                            customer: "Lê Thị D",
+                            phone: "0123456780",
+                            date: "2024-11-12",
+                            status: "Đã giao thành công",
+                            address: "TP. Hồ Chí Minh",
+                            quantity: "3 đôi",
+                            note: "Giao nhầm hàng",
+                            confirmation: "Đã Huỷ"
+                        },
+                        {
+                            id: 4,
+                            Ordercode: "DH004",
+                            customer: "Huy Ho",
+                            phone: "0123456780",
+                            date: "2024-11-12",
+                            status: "Đã giao thành công",
+                            address: "TP. Hồ Chí Minh",
+                            quantity: "3 đôi",
+                            note: "Giao nhầm hàng",
+                            confirmation: "Đã Huỷ"
+                        },
+                        {
+                            id: 5,
+                            Ordercode: "DH005",
+                            customer: "Nguyễn Văn A",
+                            phone: "0123456789",
+                            date: "2024-11-15",
+                            status: "Chưa xử lý",
+                            address: "Quận 1",
+                            quantity: "8 đôi",
+                            note: "Kiểm tra kỹ sản phẩm",
+                            confirmation: "Chưa xác nhận"
+                        },
+                        {
+                            id: 6,
+                            Ordercode: "DH006",
+                            customer: "Trần Thị B",
+                            phone: "0987654321",
+                            date: "2024-11-14",
+                            status: "Đã giao thành công",
+                            address: "Quận 2",
+                            quantity: "11 đôi",
+                            note: "Kiểm tra kỹ sản phẩm",
+                            confirmation: "Đã xác nhận"
+                        },
+                        {
+                            id: 7,
+                            Ordercode: "DH007",
+                            customer: "Phạm Văn C",
+                            phone: "0345678901",
+                            date: "2024-11-13",
+                            status: "Đã huỷ",
+                            address: "Quận 3",
+                            quantity: "3 đôi",
+                            note: "Giao nhầm hàng",
+                            confirmation: "Đã huỷ"
+                        },
+                        {
+                            id: 8,
+                            Ordercode: "DH008",
+                            customer: "Lê Thị D",
+                            phone: "0123456780",
+                            date: "2024-11-12",
+                            status: "Chưa xử lý",
+                            address: "Quận 4",
+                            quantity: "5 đôi",
+                            note: "Kiểm tra kỹ sản phẩm",
+                            confirmation: "Chưa xác nhận"
+                        }
+                    ];
 
-    <!-- Footer Section Begin -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-7">
-                    <div class="footer__about">
-                        <div class="footer__logo">
-                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                    // Hàm hiển thị bảng
+                    function renderTable() {
+                        const tableBody = document.getElementById("order-table");
+                        tableBody.innerHTML = "";
+                        orders.forEach((order, index) => {
+                            const row = `
+                <tr>
+                    <td style="border: 2px solid black;">${index + 1}</td>
+                    <td style="border: 2px solid black;">${order.Ordercode}</td>
+                    <td style="border: 2px solid black;">${order.customer}</td>
+                    <td style="border: 2px solid black;">${order.phone}</td>
+                    <td style="border: 2px solid black;">${order.date}</td>
+                    <td style="border: 2px solid black;">${order.status}</td>
+                    <td style="border: 2px solid black;">${order.address}</td>
+                    <td style="border: 2px solid black;">${order.quantity}</td>
+                    <td style="border: 2px solid black;">${order.note}</td>
+                    <td style="border: 2px solid black;">${order.confirmation}</td>
+                    <td style="border: 2px solid black;">
+                        <a href="order-detail.html" class="btn btn-primary btn-sm">Xem chi tiết</a>
+                    </td>
+                </tr>
+            `;
+                            tableBody.innerHTML += row;
+                        });
+                    }
+
+                    // Hiển thị dữ liệu ban đầu
+                    renderTable();
+                </script>
+                <!-- Footer Section Begin -->
+                <footer class="footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 col-sm-7">
+                                <div class="footer__about">
+                                    <div class="footer__logo">
+                                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                                    </div>
+                                    <p>Trang web bán giày chuyên cung cấp các mẫu giày thời trang, đa dạng từ thể thao đến công sở. Sản phẩm đảm bảo chất lượng cao, với nhiều lựa chọn về kiểu dáng và kích cỡ phù hợp cho mọi lứa tuổi.</p>
+                                    <div class="footer__payment">
+                                        <a href="#"><img src="img/payment/payment-1.png" alt=""></a>
+                                        <a href="#"><img src="img/payment/payment-2.png" alt=""></a>
+                                        <a href="#"><img src="img/payment/payment-3.png" alt=""></a>
+                                        <a href="#"><img src="img/payment/payment-4.png" alt=""></a>
+                                        <a href="#"><img src="img/payment/payment-5.png" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-5">
+                                <div class="footer__widget">
+                                    <h6>Đường dẫn</h6>
+                                    <ul>
+                                        <li><a href="#">Về chúng tôi</a></li>
+                                        <li><a href="#">Thông tin liên lạc</a></li>
+                                        <li><a href="#">Hỏi đáp cùng Ashion</a></li>
+                                        <li><a href="#">Blogs</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-4">
+                                <div class="footer__widget">
+                                    <h6>Tài khoản</h6>
+                                    <ul>
+                                        <li><a href="#">Tài khoản của tôi</a></li>
+                                        <li><a href="#">Theo dõi đơn hàng</a></li>
+                                        <li><a href="#">Thanh toán</a></li>
+                                        <li><a href="#">Danh sách yêu thích</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-8 col-sm-8">
+                                <div class="footer__newslatter">
+                                    <h6>Tạp chí Ashion</h6>
+                                    <form action="#">
+                                        <input type="text" placeholder="Email">
+                                        <button type="submit" class="site-btn">Theo dõi</button>
+                                    </form>
+                                    <div class="footer__social">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-youtube-play"></i></a>
+                                        <a href="#"><i class="fa fa-instagram"></i></a>
+                                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <p>Trang web bán giày chuyên cung cấp các mẫu giày thời trang, đa dạng từ thể thao đến công sở. Sản phẩm đảm bảo chất lượng cao, với nhiều lựa chọn về kiểu dáng và kích cỡ phù hợp cho mọi lứa tuổi.</p>
-                        <div class="footer__payment">
-                            <a href="#"><img src="img/payment/payment-1.png" alt=""></a>
-                            <a href="#"><img src="img/payment/payment-2.png" alt=""></a>
-                            <a href="#"><img src="img/payment/payment-3.png" alt=""></a>
-                            <a href="#"><img src="img/payment/payment-4.png" alt=""></a>
-                            <a href="#"><img src="img/payment/payment-5.png" alt=""></a>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                <div class="footer__copyright__text">
+                                    <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+                                </div>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-5">
-                    <div class="footer__widget">
-                        <h6>Đường dẫn</h6>
-                        <ul>
-                            <li><a href="#">Về chúng tôi</a></li>
-                            <li><a href="#">Thông tin liên lạc</a></li>
-                            <li><a href="#">Hỏi đáp cùng Ashion</a></li>
-                            <li><a href="#">Blogs</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4">
-                    <div class="footer__widget">
-                        <h6>Tài khoản</h6>
-                        <ul>
-                            <li><a href="#">Tài khoản của tôi</a></li>
-                            <li><a href="#">Theo dõi đơn hàng</a></li>
-                            <li><a href="#">Thanh toán</a></li>
-                            <li><a href="#">Danh sách yêu thích</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-8 col-sm-8">
-                    <div class="footer__newslatter">
-                        <h6>Tạp chí Ashion</h6>
-                        <form action="#">
-                            <input type="text" placeholder="Email">
-                            <button type="submit" class="site-btn">Theo dõi</button>
+                </footer>
+                <!-- Footer Section End -->
+
+                <!-- Search Begin -->
+                <div class="search-model">
+                    <div class="h-100 d-flex align-items-center justify-content-center">
+                        <div class="search-close-switch">+</div>
+                        <form class="search-model-form">
+                            <input type="text" id="search-input" placeholder="Search here.....">
                         </form>
-                        <div class="footer__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-youtube-play"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    <div class="footer__copyright__text">
-                        <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
-                    </div>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Section End -->
+                <!-- Search End -->
 
-    <!-- Search Begin -->
-    <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-            <div class="search-close-switch">+</div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Search here.....">
-            </form>
-        </div>
-    </div>
-    <!-- Search End -->
-
-    <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/jquery.countdown.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.nicescroll.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                <!-- Js Plugins -->
+                <script src="js/jquery-3.3.1.min.js"></script>
+                <script src="js/bootstrap.min.js"></script>
+                <script src="js/jquery.magnific-popup.min.js"></script>
+                <script src="js/jquery-ui.min.js"></script>
+                <script src="js/mixitup.min.js"></script>
+                <script src="js/jquery.countdown.min.js"></script>
+                <script src="js/jquery.slicknav.js"></script>
+                <script src="js/owl.carousel.min.js"></script>
+                <script src="js/jquery.nicescroll.min.js"></script>
+                <script src="js/main.js"></script>
 </body>
 
 </html>

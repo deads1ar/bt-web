@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -23,6 +24,8 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/chitietdh.css" type="text/css">
+
     <title>Chi Tiết Đơn Hàng</title>
 </head>
 
@@ -95,59 +98,112 @@
             </div>
     </header>
     <!-- Header Section End -->
+    <div class="order-container" style="margin-top: 30px;">
+        <header class="order-header">
+            <h1>Chi Tiết Đơn Hàng</h1>
+            <p class="order-id">Mã đơn hàng: <span id="order-id">F419</span></p>
+            <p class="order-date">Ngày đặt hàng: <span id="order-date">06/09/2024</span></p>
+        </header>
 
+        <!-- Thông tin khách hàng -->
+        <section class="customer-info">
+            <h2>Thông Tin Khách Hàng</h2>
+            <table>
+                <tr>
+                    <td>Tên Khách Hàng:</td>
+                    <td><span id="customer-name">WUYY Hồ</span></td>
+                </tr>
+                <tr>
+                    <td>Địa Chỉ:</td>
+                    <td><span id="customer-address">273 Đ. An Dương Vương, Phường 3, Quận 5, TP.Hồ Chí Minh</span></td>
+                </tr>
+                <tr>
+                    <td>Số Điện Thoại:</td>
+                    <td><span id="customer-phone">0707360972</span></td>
+                </tr>
+            </table>
+        </section>
 
-    <div class="container mt-5">
-        <h2 class="text-center mb-4">Chi Tiết Đơn Hàng</h2>
-        <div id="order-detail" class="border p-4">
-            <!-- Thông tin đơn hàng sẽ được hiển thị ở đây -->
-        </div>
-        <div class="text-center mt-3">
-            <a href="Qldh.html" class="btn btn-secondary">Quay lại</a>
-        </div>
+        <!-- Chi tiết sản phẩm -->
+        <section class="order-items">
+            <h2>Sản Phẩm Đặt Mua</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hình Ảnh</th>
+                        <th>Tên Sản Phẩm</th>
+                        <th>Số Lượng</th>
+                        <th>Size</th>
+                        <th>Đơn Giá</th>
+                        <th>Thành Tiền</th>
+                    </tr>
+                </thead>
+                <tbody id="order-items-list">
+                    <tr class="product-item">
+                        <td><img src="img/shop/shop-1.jpg" alt="Áo sơ mi"></td>
+                        <td>Nike Air Force 1 '07 High</td>
+                        <td>2</td>
+                        <td>41</td>
+                        <td>2.645.000 đ</td>
+                        <td>2.645.000 đ</td>
+                    </tr>
+                    <tr class="product-item">
+                        <td><img src="img/shop/shop-2.jpg" alt="Áo sơ mi"></td>
+                        <td>Nike SFB Field 2 8”</td>
+                        <td>2</td>
+                        <td>41</td>
+                        <td>2.645.000 đ</td>
+                        <td>2.645.000 đ</td>
+                    </tr>
+                    <tr class="product-item">
+                        <td><img src="img/shop/shop-9.jpg" alt="Áo sơ mi"></td>
+                        <td>2.456.000 đ</td>
+                        <td>2</td>
+                        <td>41</td>
+                        <td>2.645.000 đ</td>
+                        <td>2.645.000 đ</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Tóm tắt đơn hàng -->
+        <section class="order-summary">
+            <h2>Tóm Tắt Đơn Hàng</h2>
+            <table>
+                <tr>
+                    <td style="width: 301.61px;">Tổng Tiền Sản Phẩm:</td>
+                    <td><span id="total-product">7,935,000₫</span></td>
+                </tr>
+                <tr class="total-row">
+                    <td style="color: #27ae60; font-size: 18px; font-weight: bold;">Tổng Tiền Thanh Toán:</td>
+                    <td style="color: #27ae60; font-size: 18px; font-weight: bold;"><span id="total-payment">7,935,000₫</span></td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Thông tin giao hàng -->
+        <section class="shipping-info">
+            <h2>Thông Tin Giao Hàng</h2>
+            <table>
+                <tr>
+                    <td style="width: 301.61px;">Phương Thức Vận Chuyển:</td>
+                    <td><span id="shipping-method">Giao hàng tiêu chuẩn</span></td>
+                </tr>
+                <tr>
+                    <td>Thời Gian Dự Kiến:</td>
+                    <td><span id="delivery-time">08/09/2024</span></td>
+                </tr>
+                <tr>
+                    <td>Trạng Thái Đơn Hàng:</td>
+                    <td><span id="order-status">Đã hoàn thành</span></td>
+                </tr>
+            </table>
+        </section>
     </div>
-
-    <script>
-        // Dữ liệu đơn hàng giả lập (giống với trang chính)
-        const orders = [
-            { id: 1, code: "DH001", customer: "Nguyễn Văn A", phone: "0123456789", status: "chưa xử lý", time: "2024-11-15", address: "123 Đường ABC, Quận 1, HCM", quantity: "4 đôi", note: "chưa nhận hàng", confirmation: "chưa xác nhận" },
-            { id: 2, code: "DH002", customer: "Trần Thị B", phone: "0987654321", status: "đã giao thành công", time: "2024-11-14", address: "456 Đường DEF, Quận 2, Hà Nội", quantity: "6 đôi", note: "đã nhận hàng", confirmation: "đã xác nhận" },
-            { id: 3, code: "DH003", customer: "Phạm Văn C", phone: "0345678901", status: "đã huỷ", time: "2024-11-13", address: "789 Đường MNP, Quận 3, Đà Nẵng", quantity: "3 đôi", note: "hàng trả về", confirmation: "đã huỷ" },
-            { id: 4, code: "DH004", customer: "Lê Thị D", phone: "0123456780", status: "chưa xử lý", time: "2024-11-12", address: "312 Đường ZYQ, Quận 4, Hải Phòng", quantity: "5 đôi", note: "chưa nhận hàng", confirmation: "chưa xác nhận" }
-        ];
-
-        // Hàm lấy ID từ URL
-        function getOrderIdFromUrl() {
-            const params = new URLSearchParams(window.location.search);
-            return params.get("id");
-        }
-
-        // Hiển thị thông tin đơn hàng
-        function displayOrderDetail() {
-            const orderId = getOrderIdFromUrl();
-            const order = orders.find(o => o.id == orderId);
-
-            if (order) {
-                const detailDiv = document.getElementById("order-detail");
-                detailDiv.innerHTML = `
-                    <p><strong>Mã đơn hàng:</strong> ${order.code}</p>
-                    <p><strong>Người đặt:</strong> ${order.customer}</p>
-                    <p><strong>Số điện thoại:</strong> ${order.phone}</p>
-                    <p><strong>Tình trạng:</strong> ${order.status}</p>
-                    <p><strong>Ngày đặt:</strong> ${order.time}</p>
-                    <p><strong>Địa chỉ:</strong> ${order.address}</p>
-                    <p><strong>Số lượng:</strong> ${order.quantity}</p>
-                    <p><strong>Ghi chú:</strong> ${order.note}</p>
-                    <p><strong>Trạng thái xác nhận:</strong> ${order.confirmation}</p>
-                `;
-            } else {
-                document.getElementById("order-detail").innerHTML = "<p>Không tìm thấy đơn hàng!</p>";
-            }
-        }
-
-        // Gọi hàm khi tải trang
-        displayOrderDetail();
-    </script>
+    
+</body>
 
     <!-- Footer Section Begin -->
     <footer class="footer">
@@ -158,8 +214,7 @@
                         <div class="footer__logo">
                             <a href="./index.html"><img src="img/logo.png" alt=""></a>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                            cilisis.</p>
+                        <p>Trang web bán giày chuyên cung cấp các mẫu giày thời trang, đa dạng từ thể thao đến công sở. Sản phẩm đảm bảo chất lượng cao, với nhiều lựa chọn về kiểu dáng và kích cỡ phù hợp cho mọi lứa tuổi.</p>
                         <div class="footer__payment">
                             <a href="#"><img src="img/payment/payment-1.png" alt=""></a>
                             <a href="#"><img src="img/payment/payment-2.png" alt=""></a>
@@ -171,32 +226,32 @@
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-5">
                     <div class="footer__widget">
-                        <h6>Quick links</h6>
+                        <h6>Đường dẫn</h6>
                         <ul>
-                            <li><a href="#">About</a></li>
+                            <li><a href="#">Về chúng tôi</a></li>
+                            <li><a href="#">Thông tin liên lạc</a></li>
+                            <li><a href="#">Hỏi đáp cùng Ashion</a></li>
                             <li><a href="#">Blogs</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">FAQ</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-4">
                     <div class="footer__widget">
-                        <h6>Account</h6>
+                        <h6>Tài khoản</h6>
                         <ul>
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Orders Tracking</a></li>
-                            <li><a href="#">Checkout</a></li>
-                            <li><a href="#">Wishlist</a></li>
+                            <li><a href="#">Tài khoản của tôi</a></li>
+                            <li><a href="#">Theo dõi đơn hàng</a></li>
+                            <li><a href="#">Thanh toán</a></li>
+                            <li><a href="#">Danh sách yêu thích</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-8 col-sm-8">
                     <div class="footer__newslatter">
-                        <h6>NEWSLETTER</h6>
+                        <h6>Tạp chí Ashion</h6>
                         <form action="#">
                             <input type="text" placeholder="Email">
-                            <button type="submit" class="site-btn">Subscribe</button>
+                            <button type="submit" class="site-btn">Theo dõi</button>
                         </form>
                         <div class="footer__social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
@@ -212,11 +267,7 @@
                 <div class="col-lg-12">
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     <div class="footer__copyright__text">
-                        <p>Copyright &copy;
-                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This
-                            template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a
-                                href="https://colorlib.com" target="_blank">Colorlib</a>
-                        </p>
+                        <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
                     </div>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </div>
@@ -247,7 +298,8 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.nicescroll.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
 
 </html>
