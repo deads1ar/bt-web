@@ -121,6 +121,14 @@
                 <label for="customer-address" class="form-label">Địa chỉ</label>
                 <input type="email" class="form-control" id="customer-address">
             </div>
+            <label for="category">Trạng thái:</label>
+           <br>
+            <select id="category" name="category" style="margin-bottom: 20px;border-radius: 3px;padding: 9px;border-color: rgb(213, 211, 210);" >
+                <option selected>Đã khóa</option>
+                <option>Hoạt động</option>
+            </select>
+            <br>
+            
             <button type="button" class="btn btn-primary" onclick="saveChanges()">Lưu Thay Đổi</button>
             <a href="Qltk.html" class="btn btn-secondary">Quay Lại</a>
         </form>
@@ -167,6 +175,7 @@
 
             console.log("Đã lưu thay đổi:", updatedCustomer);
             alert("Thông tin khách hàng đã được cập nhật.");
+            window.location.href = 'Qltk.html';
         }
     </script>
        <!-- Footer Section Begin -->
